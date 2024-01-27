@@ -20,10 +20,10 @@ gc.collect()
 ssid = 'raspi-iiot'
 password = 'hussain2024'
 mqtt_server = '10.3.141.1'
-client_id = ubinascii.hexlify(machine.unique_id())
+client_id = "ESP3"
 
 #topic_sub = b'notification'
-topic_pub = b'RFID ON ESP3'
+topic_pub = b'RFID DATA'
 
 station = network.WLAN(network.STA_IF)
 

@@ -1,0 +1,68 @@
+[
+    {
+        "id": "7076387a0f78b9b5",
+        "type": "inject",
+        "z": "980ab7343260fae7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hussain Badshah",
+        "payloadType": "str",
+        "x": 300,
+        "y": 200,
+        "wires": [
+            [
+                "061bccf7749766cd"
+            ]
+        ]
+    },
+    {
+        "id": "01501cb7bf288e11",
+        "type": "debug",
+        "z": "980ab7343260fae7",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "061bccf7749766cd",
+        "type": "function",
+        "z": "980ab7343260fae7",
+        "name": "function 1",
+        "func": "var newString = msg.payload.replace(\"Badshah\",\"Jamali\")\nreturn {payload : newString};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 200,
+        "wires": [
+            [
+                "01501cb7bf288e11"
+            ]
+        ]
+    }
+]

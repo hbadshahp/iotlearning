@@ -1,0 +1,79 @@
+[
+    {
+        "id": "980ab7343260fae7",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fe2c4b23290984a7",
+        "type": "mqtt in",
+        "z": "980ab7343260fae7",
+        "name": "",
+        "topic": "RFID DATA",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "e1825ce9bc1c0008",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 220,
+        "wires": [
+            [
+                "140e0bda56b6cdd2"
+            ]
+        ]
+    },
+    {
+        "id": "140e0bda56b6cdd2",
+        "type": "debug",
+        "z": "980ab7343260fae7",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "e1825ce9bc1c0008",
+        "type": "mqtt-broker",
+        "name": "RPi broker",
+        "broker": "10.3.141.1",
+        "port": "1883",
+        "clientid": "Node_red_h",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]

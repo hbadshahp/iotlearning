@@ -1,0 +1,255 @@
+[
+    {
+        "id": "980ab7343260fae7",
+        "type": "tab",
+        "label": "H1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fe2c4b23290984a7",
+        "type": "mqtt in",
+        "z": "980ab7343260fae7",
+        "name": "",
+        "topic": "RFID DATA",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "e1825ce9bc1c0008",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 220,
+        "wires": [
+            [
+                "db23f0eefbe4bd66"
+            ]
+        ]
+    },
+    {
+        "id": "db23f0eefbe4bd66",
+        "type": "function",
+        "z": "980ab7343260fae7",
+        "name": "esp_massage_slicing",
+        "func": "let str = msg.payload;\n \nmsg.uid = str.slice(5,15);\nmsg.esp = str.slice(16,21)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 220,
+        "wires": [
+            [
+                "9a8ed6515dd31264"
+            ]
+        ]
+    },
+    {
+        "id": "eb181768426b67a4",
+        "type": "file in",
+        "z": "980ab7343260fae7",
+        "name": "",
+        "filename": "/home/iota/shared/Book.xlsx",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "allProps": false,
+        "x": 740,
+        "y": 120,
+        "wires": [
+            [
+                "b116e3d3e4ed7319"
+            ]
+        ]
+    },
+    {
+        "id": "b116e3d3e4ed7319",
+        "type": "xlsx",
+        "z": "980ab7343260fae7",
+        "name": "die_data",
+        "sheets": "first",
+        "multi": "one",
+        "parse": "rows",
+        "map": "",
+        "x": 1040,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a8ed6515dd31264",
+        "type": "function",
+        "z": "980ab7343260fae7",
+        "name": "array filtration",
+        "func": "for(let i=0;i<msg.payload.length;i++){\n    if (msg.payload[i][0]==msg.uid){\n        msg.toolid = (msg.payload[i][1])\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2bb4c2f7aab003d7",
+        "type": "debug",
+        "z": "980ab7343260fae7",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1420,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "6c740e9bdbdf74b6",
+        "type": "change",
+        "z": "980ab7343260fae7",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "",
+                "fromt": "str",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c35d93b330f3c522",
+        "type": "function",
+        "z": "980ab7343260fae7",
+        "name": "function 4",
+        "func": "const XLSX = global.get(\"xlsx\");\n\n// Read the file into memory\nconst workbook = XLSX.readFile(\"/home/iota/shared/Book.xlsx\")\n\n// Convert the XLSX to JSON\nlet worksheets ={};\nfor (const sheetName of workbook.SheetNames){\n    worksheets[sheetName] = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);\n}\nmsg.sheet = JSON.stringify(worksheets.Sheet1)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "257c8a731f23946c",
+        "type": "inject",
+        "z": "980ab7343260fae7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 960,
+        "y": 400,
+        "wires": [
+            [
+                "0f03281575e68c43"
+            ]
+        ]
+    },
+    {
+        "id": "0f03281575e68c43",
+        "type": "function",
+        "z": "980ab7343260fae7",
+        "name": "function 1",
+        "func": "import XLSX from 'xlsx';\nlet XLSX = global.get('xlsx')\nconst dirname = '/home/iota/shared';\nconst filePath = path.join(dirname, 'Book1.xlsx');\n\n\n/* original data */\nvar data = [\n    { \"name\": \"John\", \"city\": \"Seattle\" },\n    { \"name\": \"Mike\", \"city\": \"Los Angeles\" },\n    { \"name\": \"Zach\", \"city\": \"New York\" }\n];\n\n// /* this line is only needed if you are not adding a script tag reference */\n// if (typeof XLSX == 'undefined'){\n//      XLSX = require('xlsx');\n// }\n/* make the worksheet */\nvar ws = XLSX.utils.json_to_sheet(data);\n\n/* add to workbook */\n var wb = XLSX.utils.book_new();\n XLSX.utils.book_append_sheet(wb, ws, 'People');\n\n/* write workbook */\n// XLSX.write(wb, { bookType: 'xlsx', type: 'buffer' });\nXLSX.writeFile(wb, filePath )\nreturn {payload: wb}\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "xlsx",
+                "module": "xlsx"
+            },
+            {
+                "var": "path",
+                "module": "path"
+            }
+        ],
+        "x": 1220,
+        "y": 440,
+        "wires": [
+            [
+                "2bb4c2f7aab003d7"
+            ]
+        ]
+    },
+    {
+        "id": "e1825ce9bc1c0008",
+        "type": "mqtt-broker",
+        "name": "RPi broker",
+        "broker": "10.3.141.1",
+        "port": "1883",
+        "clientid": "Node_red_h",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]

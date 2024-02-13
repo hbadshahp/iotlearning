@@ -1,0 +1,276 @@
+[
+    {
+        "id": "dbbbdb20cca71fa0",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d92c65a4.566478",
+        "type": "inject",
+        "z": "dbbbdb20cca71fa0",
+        "name": "Init",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 70,
+        "y": 320,
+        "wires": [
+            [
+                "4e4829e3.eaeae8"
+            ]
+        ]
+    },
+    {
+        "id": "4e4829e3.eaeae8",
+        "type": "file in",
+        "z": "dbbbdb20cca71fa0",
+        "name": "",
+        "filename": "/home/iota/shared/try1.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "allProps": false,
+        "x": 340,
+        "y": 320,
+        "wires": [
+            [
+                "d42eaa86.c12c18"
+            ]
+        ]
+    },
+    {
+        "id": "d42eaa86.c12c18",
+        "type": "csv",
+        "z": "dbbbdb20cca71fa0",
+        "name": "",
+        "sep": ";",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": false,
+        "x": 570,
+        "y": 320,
+        "wires": [
+            [
+                "3ac5b1c2.cbbd5e"
+            ]
+        ]
+    },
+    {
+        "id": "3ac5b1c2.cbbd5e",
+        "type": "split",
+        "z": "dbbbdb20cca71fa0",
+        "name": "",
+        "splt": ";",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": true,
+        "addname": "topic",
+        "x": 710,
+        "y": 320,
+        "wires": [
+            [
+                "5ed3ced8.9dd17"
+            ]
+        ]
+    },
+    {
+        "id": "5ed3ced8.9dd17",
+        "type": "switch",
+        "z": "dbbbdb20cca71fa0",
+        "name": "",
+        "property": "payload.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "led1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "led2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "led3",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 870,
+        "y": 320,
+        "wires": [
+            [
+                "1fbafc85.1bae13"
+            ],
+            [
+                "eb8c629c.fac47"
+            ],
+            [
+                "81cb2400.d5dea8"
+            ]
+        ]
+    },
+    {
+        "id": "1fbafc85.1bae13",
+        "type": "function",
+        "z": "dbbbdb20cca71fa0",
+        "name": "led1",
+        "func": "msg.name = msg.payload.name;\nmsg.color = msg.payload.color;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 260,
+        "wires": [
+            [
+                "a514228b.20c53",
+                "b08aec56d991e9a4",
+                "1854f17750f01c1f"
+            ]
+        ]
+    },
+    {
+        "id": "eb8c629c.fac47",
+        "type": "function",
+        "z": "dbbbdb20cca71fa0",
+        "name": "led2",
+        "func": "msg.name = msg.payload.name;\nmsg.color = msg.payload.color;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "81cb2400.d5dea8",
+        "type": "function",
+        "z": "dbbbdb20cca71fa0",
+        "name": "led3",
+        "func": "msg.name = msg.payload.name;\nmsg.color = msg.payload.color;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a514228b.20c53",
+        "type": "debug",
+        "z": "dbbbdb20cca71fa0",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "b08aec56d991e9a4",
+        "type": "ui_text",
+        "z": "dbbbdb20cca71fa0",
+        "group": "3a87b0bbc84e7ee8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "name",
+        "format": "{{msg.payload.name}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1250,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "1854f17750f01c1f",
+        "type": "ui_text",
+        "z": "dbbbdb20cca71fa0",
+        "group": "3a87b0bbc84e7ee8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "color",
+        "format": "{{msg.payload.color}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1270,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "3a87b0bbc84e7ee8",
+        "type": "ui_group",
+        "name": "Demo",
+        "tab": "23c8b4d72a2cb91e",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "23c8b4d72a2cb91e",
+        "type": "ui_tab",
+        "name": "Try",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

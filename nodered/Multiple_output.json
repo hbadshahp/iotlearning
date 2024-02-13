@@ -1,0 +1,76 @@
+[
+    {
+        "id": "f22b56a9012b1c63",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2a7fb3ae1cd5db04",
+        "type": "function",
+        "z": "f22b56a9012b1c63",
+        "name": "Temperature sensor",
+        "func": "// Suppose a json data is received\nconst dataString ='{\"Room\":\"Bedroom\",\"TempSensor\":30.1,\"HumiditySensor\":80.1,\"Error\":false}';\n\n// Converting string data to object\nconst data = JSON.parse(dataString);\n\nvar msg1 = {payload: data.Room+\" Temperature: \"+data.TempSensor};\nvar msg2 = { payload: data.Room + \" Humidity: \" + data.HumiditySensor };\nvar msg3 = {payload: data.Error};\n\n// \"Error = true\" if the incoming data is incorrect, otherwise \"Error\" = false\nif(!data.Error){\n    //if \"Error =false\", data is transmitted to 3 outputs\n    return [[msg1,msg2, msg3]];\n}\n// if \"error=true\" only outputs 3 will get an error message. A null value is passed to outputs 1 and 2\nreturn [[null,null,msg3]];\n// var newMsg = {payload: msg.payload.length };\n// return msg;\n// return [[msg, newMsg]];",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 340,
+        "wires": [
+            [
+                "ac289f5ece487039"
+            ]
+        ]
+    },
+    {
+        "id": "960fe18cbbf9247a",
+        "type": "inject",
+        "z": "f22b56a9012b1c63",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 620,
+        "y": 340,
+        "wires": [
+            [
+                "2a7fb3ae1cd5db04"
+            ]
+        ]
+    },
+    {
+        "id": "ac289f5ece487039",
+        "type": "debug",
+        "z": "f22b56a9012b1c63",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1180,
+        "y": 340,
+        "wires": []
+    }
+]

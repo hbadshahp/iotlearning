@@ -1,0 +1,689 @@
+[
+    {
+        "id": "7242dd3ffcf449fc",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "08099b9931cadfdf",
+        "type": "group",
+        "z": "7242dd3ffcf449fc",
+        "name": "Real Time",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "62998ecfee082e4e",
+            "f0f883cb20f67314",
+            "5bb0da074604e060",
+            "8419d99ab8751ce5",
+            "7d46d8d5945d75a3",
+            "193cf78bbba026b5"
+        ],
+        "x": 73,
+        "y": 79,
+        "w": 992,
+        "h": 142
+    },
+    {
+        "id": "4a39cfede913431e",
+        "type": "group",
+        "z": "7242dd3ffcf449fc",
+        "name": "History",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "0d4883f4b4d97ad0",
+            "442a391ace485e70",
+            "a4a2d1b11c4526d3",
+            "9ef6f413cec79796",
+            "192a5d24bd732bba",
+            "a9a4e7b0b52902d2",
+            "2c5b529ceecb327c",
+            "4f19ea7cb0bf4e83",
+            "98de7ea632a60e15",
+            "5dd158f48fc07bd1",
+            "4bd614b79666497b"
+        ],
+        "x": 74,
+        "y": 299,
+        "w": 1192,
+        "h": 282
+    },
+    {
+        "id": "62998ecfee082e4e",
+        "type": "inject",
+        "z": "7242dd3ffcf449fc",
+        "g": "08099b9931cadfdf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 189,
+        "y": 180,
+        "wires": [
+            [
+                "f0f883cb20f67314"
+            ]
+        ]
+    },
+    {
+        "id": "f0f883cb20f67314",
+        "type": "file in",
+        "z": "7242dd3ffcf449fc",
+        "g": "08099b9931cadfdf",
+        "name": "",
+        "filename": "/home/iota/shared/read.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 440,
+        "y": 180,
+        "wires": [
+            [
+                "5bb0da074604e060"
+            ]
+        ]
+    },
+    {
+        "id": "5bb0da074604e060",
+        "type": "csv",
+        "z": "7242dd3ffcf449fc",
+        "g": "08099b9931cadfdf",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 649,
+        "y": 180,
+        "wires": [
+            [
+                "8419d99ab8751ce5",
+                "7d46d8d5945d75a3"
+            ]
+        ]
+    },
+    {
+        "id": "8419d99ab8751ce5",
+        "type": "debug",
+        "z": "7242dd3ffcf449fc",
+        "g": "08099b9931cadfdf",
+        "name": "debug 42",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 839,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "7d46d8d5945d75a3",
+        "type": "sort",
+        "z": "7242dd3ffcf449fc",
+        "g": "08099b9931cadfdf",
+        "name": "",
+        "order": "ascending",
+        "as_num": false,
+        "target": "payload",
+        "targetType": "msg",
+        "msgKey": "payload",
+        "msgKeyType": "elem",
+        "seqKey": "payload",
+        "seqKeyType": "msg",
+        "x": 829,
+        "y": 180,
+        "wires": [
+            [
+                "193cf78bbba026b5"
+            ]
+        ]
+    },
+    {
+        "id": "193cf78bbba026b5",
+        "type": "ui_table",
+        "z": "7242dd3ffcf449fc",
+        "g": "08099b9931cadfdf",
+        "group": "49d119d3dd8c9b60",
+        "name": "",
+        "order": 1,
+        "width": 10,
+        "height": 10,
+        "columns": [
+            {
+                "field": "Group",
+                "title": "Group",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "Name",
+                "title": "Name",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "region",
+                "title": "Region",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 989,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "0d4883f4b4d97ad0",
+        "type": "ui_dropdown",
+        "z": "7242dd3ffcf449fc",
+        "g": "4a39cfede913431e",
+        "name": "",
+        "label": "Group",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "8f8e6c1b968be20c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "A",
+                "value": "A",
+                "type": "str"
+            },
+            {
+                "label": "B",
+                "value": "B",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 370,
+        "y": 480,
+        "wires": [
+            [
+                "192a5d24bd732bba"
+            ]
+        ]
+    },
+    {
+        "id": "442a391ace485e70",
+        "type": "debug",
+        "z": "7242dd3ffcf449fc",
+        "g": "4a39cfede913431e",
+        "name": "debug 43",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1160,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "a4a2d1b11c4526d3",
+        "type": "ui_button",
+        "z": "7242dd3ffcf449fc",
+        "g": "4a39cfede913431e",
+        "name": "",
+        "group": "8f8e6c1b968be20c",
+        "order": 3,
+        "width": 10,
+        "height": 1,
+        "passthru": false,
+        "label": "clear",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "C",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 150,
+        "y": 440,
+        "wires": [
+            [
+                "0d4883f4b4d97ad0",
+                "9ef6f413cec79796",
+                "5dd158f48fc07bd1"
+            ]
+        ]
+    },
+    {
+        "id": "9ef6f413cec79796",
+        "type": "ui_dropdown",
+        "z": "7242dd3ffcf449fc",
+        "g": "4a39cfede913431e",
+        "name": "",
+        "label": "Region",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "8f8e6c1b968be20c",
+        "order": 2,
+        "width": 7,
+        "height": 1,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Bihar",
+                "value": "Bihar",
+                "type": "str"
+            },
+            {
+                "label": "Chattisgarh",
+                "value": "Chattisgarh",
+                "type": "str"
+            },
+            {
+                "label": "HP",
+                "value": "HP",
+                "type": "str"
+            },
+            {
+                "label": "Punjab",
+                "value": "Punjab",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 380,
+        "y": 540,
+        "wires": [
+            [
+                "192a5d24bd732bba"
+            ]
+        ]
+    },
+    {
+        "id": "192a5d24bd732bba",
+        "type": "join",
+        "z": "7242dd3ffcf449fc",
+        "g": "4a39cfede913431e",
+        "name": "User",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 610,
+        "y": 500,
+        "wires": [
+            [
+                "a9a4e7b0b52902d2"
+            ]
+        ]
+    },
+    {
+        "id": "a9a4e7b0b52902d2",
+        "type": "join",
+        "z": "7242dd3ffcf449fc",
+        "g": "4a39cfede913431e",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 790,
+        "y": 440,
+        "wires": [
+            [
+                "2c5b529ceecb327c",
+                "4f19ea7cb0bf4e83"
+            ]
+        ]
+    },
+    {
+        "id": "2c5b529ceecb327c",
+        "type": "function",
+        "z": "7242dd3ffcf449fc",
+        "g": "4a39cfede913431e",
+        "name": "function 8",
+        "func": "\n// var newMsg = {};\n// var l = { x: msg.payload.xls.length };\n\nvar l = {x: msg.payload[0].length}\nvar array = [];\n// var rfid = msg.payload.RFID.slice(5, 15);\n\n// var esp = msg.payload.RFID.slice(16, 21);\n\nfor (var i = 0; i< l.x; i++){\n    if (msg.payload[0][i][\"Group\"] ==msg.payload[1][0] && msg.payload[0][i][\"region\"] ==msg.payload[1][1] ){\n        array.push(msg.payload[0][i])\n    }\n}\n//     else{\n//         var newMsg = { pass: 0 }\n//     }\n// }\n// for (var i = 0; i < l.x; i++) {\n//     if (msg.payload.xls[i] && msg.payload.xls[i][0] == rfid.toString()) {\n//         newMsg.payload = {\n//             tool_id: msg.payload.xls[i][1],\n//             Part: msg.payload.xls[i][2],\n//             Operation: msg.payload.xls[i][3],\n//             Station_id: esp,\n//             Date:d.getDate()+\"/\"+(d.getMonth()+1)+ \"/\"+ d.getFullYear(),\n//             Time: d.getHours()+\":\"+d.getMinutes()\n//             //srvtime:new Date(Date.now()+(5*60*60*1000))\n//            // srvtime:new Date(new Date().getTime()+5*3600*1000)\n\n//         };\n//         break; // Once found, exit the loop\n//     }\n// }\nvar newMsg = {payload: array};\nreturn newMsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 440,
+        "wires": [
+            [
+                "442a391ace485e70",
+                "98de7ea632a60e15"
+            ]
+        ]
+    },
+    {
+        "id": "4f19ea7cb0bf4e83",
+        "type": "debug",
+        "z": "7242dd3ffcf449fc",
+        "g": "4a39cfede913431e",
+        "name": "debug 45",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "98de7ea632a60e15",
+        "type": "ui_table",
+        "z": "7242dd3ffcf449fc",
+        "g": "4a39cfede913431e",
+        "group": "8f8e6c1b968be20c",
+        "name": "",
+        "order": 4,
+        "width": 10,
+        "height": "5",
+        "columns": [
+            {
+                "field": "Group",
+                "title": "Group",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "Name",
+                "title": "Name",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "region",
+                "title": "Region",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1150,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "5dd158f48fc07bd1",
+        "type": "file in",
+        "z": "7242dd3ffcf449fc",
+        "g": "4a39cfede913431e",
+        "name": "",
+        "filename": "/home/iota/shared/read.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 401,
+        "y": 340,
+        "wires": [
+            [
+                "4bd614b79666497b"
+            ]
+        ]
+    },
+    {
+        "id": "4bd614b79666497b",
+        "type": "csv",
+        "z": "7242dd3ffcf449fc",
+        "g": "4a39cfede913431e",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 610,
+        "y": 340,
+        "wires": [
+            [
+                "a9a4e7b0b52902d2"
+            ]
+        ]
+    },
+    {
+        "id": "8b362a4133cafff4",
+        "type": "ui_spacer",
+        "z": "7242dd3ffcf449fc",
+        "name": "spacer",
+        "group": "8f8e6c1b968be20c",
+        "order": 7,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "de71f690c2adcb68",
+        "type": "ui_spacer",
+        "z": "7242dd3ffcf449fc",
+        "name": "spacer",
+        "group": "8f8e6c1b968be20c",
+        "order": 9,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "a1f15872ec53c5a0",
+        "type": "ui_spacer",
+        "z": "7242dd3ffcf449fc",
+        "name": "spacer",
+        "group": "8f8e6c1b968be20c",
+        "order": 11,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "bc4f5ae68f72e659",
+        "type": "ui_spacer",
+        "z": "7242dd3ffcf449fc",
+        "name": "spacer",
+        "group": "8f8e6c1b968be20c",
+        "order": 13,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "ddabbffa44366f32",
+        "type": "ui_spacer",
+        "z": "7242dd3ffcf449fc",
+        "name": "spacer",
+        "group": "8f8e6c1b968be20c",
+        "order": 15,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "d07076d340c8a17e",
+        "type": "ui_spacer",
+        "z": "7242dd3ffcf449fc",
+        "name": "spacer",
+        "group": "8f8e6c1b968be20c",
+        "order": 17,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "94da692b456b7cd0",
+        "type": "ui_spacer",
+        "z": "7242dd3ffcf449fc",
+        "name": "spacer",
+        "group": "8f8e6c1b968be20c",
+        "order": 19,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "7e97d515019076f8",
+        "type": "ui_spacer",
+        "z": "7242dd3ffcf449fc",
+        "name": "spacer",
+        "group": "8f8e6c1b968be20c",
+        "order": 21,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "1b0fdea832d29ab3",
+        "type": "ui_spacer",
+        "z": "7242dd3ffcf449fc",
+        "name": "spacer",
+        "group": "8f8e6c1b968be20c",
+        "order": 23,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "02a1258647a291de",
+        "type": "ui_spacer",
+        "z": "7242dd3ffcf449fc",
+        "name": "spacer",
+        "group": "8f8e6c1b968be20c",
+        "order": 25,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8a3f72a5639b5c97",
+        "type": "ui_spacer",
+        "z": "7242dd3ffcf449fc",
+        "name": "spacer",
+        "group": "8f8e6c1b968be20c",
+        "order": 27,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "49d119d3dd8c9b60",
+        "type": "ui_group",
+        "name": "Real Time",
+        "tab": "97789721ea3fb461",
+        "order": 1,
+        "disp": true,
+        "width": 10,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8f8e6c1b968be20c",
+        "type": "ui_group",
+        "name": "History",
+        "tab": "97789721ea3fb461",
+        "order": 2,
+        "disp": true,
+        "width": "10",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "97789721ea3fb461",
+        "type": "ui_tab",
+        "name": "Die Tracking",
+        "icon": "fa-car",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]

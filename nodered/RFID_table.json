@@ -1,0 +1,154 @@
+[
+    {
+        "id": "9cb31c29774cac64",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "df535995e715e11e",
+        "type": "inject",
+        "z": "9cb31c29774cac64",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 120,
+        "wires": [
+            [
+                "9294161ab63e35d0"
+            ]
+        ]
+    },
+    {
+        "id": "9294161ab63e35d0",
+        "type": "file in",
+        "z": "9cb31c29774cac64",
+        "name": "",
+        "filename": "/home/iota/shared/log.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 410,
+        "y": 200,
+        "wires": [
+            [
+                "24f037020e0522fe"
+            ]
+        ]
+    },
+    {
+        "id": "24f037020e0522fe",
+        "type": "csv",
+        "z": "9cb31c29774cac64",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "1",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 470,
+        "y": 300,
+        "wires": [
+            [
+                "369724a2e4e79d4b"
+            ]
+        ]
+    },
+    {
+        "id": "774d08e2eddb10ef",
+        "type": "debug",
+        "z": "9cb31c29774cac64",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "369724a2e4e79d4b",
+        "type": "ui_table",
+        "z": "9cb31c29774cac64",
+        "group": "39f2cad067ce58e8",
+        "name": "",
+        "order": 1,
+        "width": "21",
+        "height": "14",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 710,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "2be567ef4b906992",
+        "type": "ui_spacer",
+        "z": "9cb31c29774cac64",
+        "name": "spacer",
+        "group": "7034674a6ff73804",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ac9cc81f55591a26",
+        "type": "ui_spacer",
+        "z": "9cb31c29774cac64",
+        "name": "spacer",
+        "group": "7034674a6ff73804",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "39f2cad067ce58e8",
+        "type": "ui_group",
+        "name": "RFID Data",
+        "tab": "2cb32c46576e8985",
+        "order": 1,
+        "disp": true,
+        "width": "21",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2cb32c46576e8985",
+        "type": "ui_tab",
+        "name": "History",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]

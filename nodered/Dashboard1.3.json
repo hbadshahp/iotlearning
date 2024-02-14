@@ -1,0 +1,982 @@
+[
+    {
+        "id": "ce5e1ccf0375bc3c",
+        "type": "tab",
+        "label": "Dashboard 1.3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b6f5b19906112d2f",
+        "type": "group",
+        "z": "ce5e1ccf0375bc3c",
+        "name": "RFID reading",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "8be27593ec255765",
+            "30da46937304a028",
+            "06f54c93daef244d",
+            "10ebbf3a64eb1266",
+            "34c20426c58a920e",
+            "ec69c2692d9f94a6",
+            "1804911842cd1ea8",
+            "ec4825e1354e7fb9",
+            "7c21efbf5e2db6ca",
+            "f2bcda214a3e6b9d",
+            "2b7291870e9ed092",
+            "395bb8e95228be65"
+        ],
+        "x": 134,
+        "y": 119,
+        "w": 1712,
+        "h": 302
+    },
+    {
+        "id": "615aa6669bf1f136",
+        "type": "group",
+        "z": "ce5e1ccf0375bc3c",
+        "name": "Real Time",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "d14b2921302b1d04",
+            "84d5c9e51c506356",
+            "e0cda7879931b8d3",
+            "5e5a09f71e1e6682",
+            "4450b99c3791f47a",
+            "6aa36060c2e5cd1d"
+        ],
+        "x": 134,
+        "y": 459,
+        "w": 972,
+        "h": 142
+    },
+    {
+        "id": "21a7ba0d71ce1884",
+        "type": "group",
+        "z": "ce5e1ccf0375bc3c",
+        "name": "History",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "5e0ef6319b30fff1",
+            "e4c097e1124f56b5",
+            "d39be36f1c893ecc",
+            "497ab97ad5caaf03",
+            "18ce47867739776b",
+            "dbcdc6cf8a9f49dc",
+            "03895d2fc0dfcd05",
+            "e66ce661fc584c35",
+            "ce6704ee7fe327e4",
+            "b3534e9f069b073e",
+            "d4f90e79bb8480a9",
+            "88df004ed6825957",
+            "971c9ef635231922"
+        ],
+        "x": 135,
+        "y": 679,
+        "w": 1192,
+        "h": 302
+    },
+    {
+        "id": "8be27593ec255765",
+        "type": "file in",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "b6f5b19906112d2f",
+        "name": "",
+        "filename": "/home/iota/shared/Book.xlsx",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "allProps": false,
+        "x": 560,
+        "y": 200,
+        "wires": [
+            [
+                "30da46937304a028"
+            ]
+        ]
+    },
+    {
+        "id": "30da46937304a028",
+        "type": "xlsx",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "b6f5b19906112d2f",
+        "name": "die_data",
+        "sheets": "first",
+        "multi": "one",
+        "parse": "rows",
+        "map": "",
+        "x": 800,
+        "y": 200,
+        "wires": [
+            [
+                "06f54c93daef244d",
+                "ec4825e1354e7fb9"
+            ]
+        ]
+    },
+    {
+        "id": "06f54c93daef244d",
+        "type": "join",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "b6f5b19906112d2f",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1010,
+        "y": 240,
+        "wires": [
+            [
+                "1804911842cd1ea8",
+                "ec69c2692d9f94a6"
+            ]
+        ]
+    },
+    {
+        "id": "10ebbf3a64eb1266",
+        "type": "inject",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "b6f5b19906112d2f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 12 * * *",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "xls",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 200,
+        "wires": [
+            [
+                "8be27593ec255765"
+            ]
+        ]
+    },
+    {
+        "id": "34c20426c58a920e",
+        "type": "debug",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "b6f5b19906112d2f",
+        "name": "debug 17",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1400,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "ec69c2692d9f94a6",
+        "type": "function",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "b6f5b19906112d2f",
+        "name": "function 6",
+        "func": "//var d = new Date();\n\n// var newMsg = {payload: msg.payload.xls[1][0]}\n/*\nvar l ={x: msg.payload.xls.length}\n\n\n\nvar rfid = msg.payload.RFID.slice(5,15)\nvar esp = msg.payload.RFID.slice(16,21)\n// var sum = 0\n//for(let i=1; i<=(msg.payload.xls.length); i++){\nfor( i=1; i<=l.x; i++){\n     //i = Number.parseInt(i);\n    // sum = sum + i\n\n    if (msg.payload.xls[i][0] == rfid.toString()){\n    // if (msg.payload.xls[i][0] == \"0x53ae22ad\" ){\n    var newMsg = { tool_id: msg.payload.xls[i][1], Part: msg.payload.xls[i][2], Operation: msg.payload.xls[i][3], Station_id:esp }\n    // if (msg.payload.xls[2][0] == rfid.toString()){\n    // var newMsg = { tool_id: msg.payload.xls[2][1], Part: msg.payload.xls[2][2], Operation: msg.payload.xls[2][3], Station_id:esp }\n    \n}\n}\n// var newMsg ={summation : sum}\n\nreturn newMsg;\n\n*/\nvar d = new Date()\n\n\nvar newMsg = {};\nvar l = { x: msg.payload.xls.length };\n\nvar rfid = msg.payload.RFID.slice(5, 15);\nvar esp = msg.payload.RFID.slice(16, 21);\n\nfor (var i = 0; i < l.x; i++) {\n    if (msg.payload.xls[i] && msg.payload.xls[i][0] == rfid.toString()) {\n        newMsg.payload = {\n            tool_id: msg.payload.xls[i][1],\n            Part: msg.payload.xls[i][2],\n            Operation: msg.payload.xls[i][3],\n            Station_id: esp,\n            Date:d.getDate()+\"/\"+(d.getMonth()+1)+ \"/\"+ d.getFullYear(),\n            Time: d.getHours()+\":\"+d.getMinutes()\n            //srvtime:new Date(Date.now()+(5*60*60*1000))\n           // srvtime:new Date(new Date().getTime()+5*3600*1000)\n\n        };\n        break; // Once found, exit the loop\n    }\n}\n\nreturn newMsg;\n\n\n\n\n\n\n\n\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1200,
+        "y": 280,
+        "wires": [
+            [
+                "f2bcda214a3e6b9d",
+                "34c20426c58a920e"
+            ]
+        ]
+    },
+    {
+        "id": "1804911842cd1ea8",
+        "type": "debug",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "b6f5b19906112d2f",
+        "name": "debug 18",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1180,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "ec4825e1354e7fb9",
+        "type": "debug",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "b6f5b19906112d2f",
+        "name": "debug 19",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "7c21efbf5e2db6ca",
+        "type": "mqtt in",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "b6f5b19906112d2f",
+        "name": "",
+        "topic": "RFID",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "e1825ce9bc1c0008",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 790,
+        "y": 260,
+        "wires": [
+            [
+                "06f54c93daef244d"
+            ]
+        ]
+    },
+    {
+        "id": "f2bcda214a3e6b9d",
+        "type": "json",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "b6f5b19906112d2f",
+        "name": "",
+        "property": "object",
+        "action": "",
+        "pretty": false,
+        "x": 1350,
+        "y": 380,
+        "wires": [
+            [
+                "2b7291870e9ed092"
+            ]
+        ]
+    },
+    {
+        "id": "2b7291870e9ed092",
+        "type": "csv",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "b6f5b19906112d2f",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "tool_id,Part,Operation,Station_id,Date,Time",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 1490,
+        "y": 380,
+        "wires": [
+            [
+                "395bb8e95228be65"
+            ]
+        ]
+    },
+    {
+        "id": "395bb8e95228be65",
+        "type": "file",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "b6f5b19906112d2f",
+        "name": "",
+        "filename": "/home/iota/shared/trial.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1710,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d14b2921302b1d04",
+        "type": "inject",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "615aa6669bf1f136",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 560,
+        "wires": [
+            [
+                "84d5c9e51c506356"
+            ]
+        ]
+    },
+    {
+        "id": "84d5c9e51c506356",
+        "type": "file in",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "615aa6669bf1f136",
+        "name": "",
+        "filename": "/home/iota/shared/trial.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 491,
+        "y": 560,
+        "wires": [
+            [
+                "e0cda7879931b8d3"
+            ]
+        ]
+    },
+    {
+        "id": "e0cda7879931b8d3",
+        "type": "csv",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "615aa6669bf1f136",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 710,
+        "y": 560,
+        "wires": [
+            [
+                "5e5a09f71e1e6682",
+                "4450b99c3791f47a"
+            ]
+        ]
+    },
+    {
+        "id": "5e5a09f71e1e6682",
+        "type": "debug",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "615aa6669bf1f136",
+        "name": "debug 46",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "4450b99c3791f47a",
+        "type": "sort",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "615aa6669bf1f136",
+        "name": "",
+        "order": "ascending",
+        "as_num": false,
+        "target": "payload",
+        "targetType": "msg",
+        "msgKey": "payload",
+        "msgKeyType": "elem",
+        "seqKey": "payload",
+        "seqKeyType": "msg",
+        "x": 890,
+        "y": 560,
+        "wires": [
+            [
+                "6aa36060c2e5cd1d"
+            ]
+        ]
+    },
+    {
+        "id": "5e0ef6319b30fff1",
+        "type": "ui_dropdown",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "21a7ba0d71ce1884",
+        "name": "",
+        "label": "Tool ID",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "8f8e6c1b968be20c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "YY FIG ECN 01 . 3/4 .1",
+                "value": "YY FIG ECN 01 . 3/4 .1",
+                "type": "str"
+            },
+            {
+                "label": "YY FIG YRA 00 . 1/5 . 1",
+                "value": "YY FIG YRA 00 . 1/5 . 1",
+                "type": "str"
+            },
+            {
+                "label": "YY FIG YRA1 03 . 3/4 . 1",
+                "value": "YY FIG YRA1 03 . 3/4 . 1",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 380,
+        "y": 860,
+        "wires": [
+            [
+                "497ab97ad5caaf03"
+            ]
+        ]
+    },
+    {
+        "id": "e4c097e1124f56b5",
+        "type": "debug",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "21a7ba0d71ce1884",
+        "name": "debug 47",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1221,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "d39be36f1c893ecc",
+        "type": "ui_button",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "21a7ba0d71ce1884",
+        "name": "",
+        "group": "8f8e6c1b968be20c",
+        "order": 3,
+        "width": 10,
+        "height": 1,
+        "passthru": false,
+        "label": "clear",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "C",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 211,
+        "y": 820,
+        "wires": [
+            [
+                "ce6704ee7fe327e4",
+                "5e0ef6319b30fff1"
+            ]
+        ]
+    },
+    {
+        "id": "497ab97ad5caaf03",
+        "type": "join",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "21a7ba0d71ce1884",
+        "name": "User",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 671,
+        "y": 880,
+        "wires": [
+            [
+                "18ce47867739776b",
+                "88df004ed6825957"
+            ]
+        ]
+    },
+    {
+        "id": "18ce47867739776b",
+        "type": "join",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "21a7ba0d71ce1884",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 851,
+        "y": 820,
+        "wires": [
+            [
+                "dbcdc6cf8a9f49dc",
+                "03895d2fc0dfcd05"
+            ]
+        ]
+    },
+    {
+        "id": "dbcdc6cf8a9f49dc",
+        "type": "function",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "21a7ba0d71ce1884",
+        "name": "function 9",
+        "func": "\n// var newMsg = {};\n// var l = { x: msg.payload.xls.length };\n\nvar l = {x: msg.payload[0].length}\nvar array = [];\n// var rfid = msg.payload.RFID.slice(5, 15);\n\n// var esp = msg.payload.RFID.slice(16, 21);\n\nfor (var i = 0; i< l.x; i++){\n    if (msg.payload[0][i][\"col1\"] ==msg.payload[1][0] && msg.payload[0][i][\"col5\"] ==msg.payload[1][1] ){\n        array.push(msg.payload[0][i])\n    }\n}\n//     else{\n//         var newMsg = { pass: 0}\n//     }\n// }\n// for (var i = 0; i < l.x; i++) {\n//     if (msg.payload.xls[i] && msg.payload.xls[i][0] == rfid.toString()) {\n//         newMsg.payload = {\n//             tool_id: msg.payload.xls[i][1],\n//             Part: msg.payload.xls[i][2],\n//             Operation: msg.payload.xls[i][3],\n//             Station_id: esp,\n//             Date:d.getDate()+\"/\"+(d.getMonth()+1)+ \"/\"+ d.getFullYear(),\n//             Time: d.getHours()+\":\"+d.getMinutes()\n//             //srvtime:new Date(Date.now()+(5*60*60*1000))\n//            // srvtime:new Date(new Date().getTime()+5*3600*1000)\n\n//         };\n//         break; // Once found, exit the loop\n//     }\n// }\nvar newMsg = {payload: array};\nreturn newMsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1041,
+        "y": 820,
+        "wires": [
+            [
+                "e4c097e1124f56b5",
+                "e66ce661fc584c35"
+            ]
+        ]
+    },
+    {
+        "id": "03895d2fc0dfcd05",
+        "type": "debug",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "21a7ba0d71ce1884",
+        "name": "debug 48",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 981,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "e66ce661fc584c35",
+        "type": "ui_table",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "21a7ba0d71ce1884",
+        "group": "8f8e6c1b968be20c",
+        "name": "",
+        "order": 4,
+        "width": 10,
+        "height": 5,
+        "columns": [
+            {
+                "field": "col5",
+                "title": "Date",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col6",
+                "title": "Time",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col1",
+                "title": "Tool ID",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col2",
+                "title": "Part Name",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col3",
+                "title": "Operation",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col4",
+                "title": "Station ID",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1211,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "ce6704ee7fe327e4",
+        "type": "file in",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "21a7ba0d71ce1884",
+        "name": "",
+        "filename": "/home/iota/shared/trial.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 452,
+        "y": 720,
+        "wires": [
+            [
+                "b3534e9f069b073e"
+            ]
+        ]
+    },
+    {
+        "id": "b3534e9f069b073e",
+        "type": "csv",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "21a7ba0d71ce1884",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 671,
+        "y": 720,
+        "wires": [
+            [
+                "18ce47867739776b"
+            ]
+        ]
+    },
+    {
+        "id": "6aa36060c2e5cd1d",
+        "type": "ui_table",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "615aa6669bf1f136",
+        "group": "49d119d3dd8c9b60",
+        "name": "",
+        "order": 1,
+        "width": 10,
+        "height": 3,
+        "columns": [
+            {
+                "field": "col5",
+                "title": "Date",
+                "width": "80",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col6",
+                "title": "Time",
+                "width": "50",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col1",
+                "title": "Tool ID",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col2",
+                "title": "Part Name",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col3",
+                "title": "Operation",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col4",
+                "title": "Station ID",
+                "width": "60",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1030,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "d4f90e79bb8480a9",
+        "type": "ui_date_picker",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "21a7ba0d71ce1884",
+        "name": "",
+        "label": "date",
+        "group": "8f8e6c1b968be20c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 370,
+        "y": 940,
+        "wires": [
+            [
+                "971c9ef635231922"
+            ]
+        ]
+    },
+    {
+        "id": "88df004ed6825957",
+        "type": "debug",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "21a7ba0d71ce1884",
+        "name": "debug 49",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "971c9ef635231922",
+        "type": "function",
+        "z": "ce5e1ccf0375bc3c",
+        "g": "21a7ba0d71ce1884",
+        "name": "function 11",
+        "func": "// Create a new Date object from the msg.payload\nvar date = new Date(msg.payload);\n\n// Format the date as \"dd/mm/yyyy\"\nvar formattedDate = date.getDate() + \"/\" + (date.getMonth() + 1) + \"/\" + date.getFullYear();\n\n// Set the formatted date as the msg.payload\nmsg.payload = formattedDate;\n\n// Return the modified msg object\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 940,
+        "wires": [
+            [
+                "497ab97ad5caaf03"
+            ]
+        ]
+    },
+    {
+        "id": "fd20baa511ea676c",
+        "type": "ui_spacer",
+        "z": "ce5e1ccf0375bc3c",
+        "name": "spacer",
+        "group": "9025e9b8f3af6890",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e1825ce9bc1c0008",
+        "type": "mqtt-broker",
+        "name": "RPi broker",
+        "broker": "10.3.141.1",
+        "port": "1883",
+        "clientid": "Node_red_h",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "8f8e6c1b968be20c",
+        "type": "ui_group",
+        "name": "History",
+        "tab": "97789721ea3fb461",
+        "order": 2,
+        "disp": true,
+        "width": "10",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "49d119d3dd8c9b60",
+        "type": "ui_group",
+        "name": "Real Time",
+        "tab": "97789721ea3fb461",
+        "order": 1,
+        "disp": true,
+        "width": 10,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "97789721ea3fb461",
+        "type": "ui_tab",
+        "name": "Die Tracking",
+        "icon": "fa-car",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]

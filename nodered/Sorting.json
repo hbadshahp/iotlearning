@@ -1,0 +1,1087 @@
+[
+    {
+        "id": "97fc3ce4b73122e2",
+        "type": "tab",
+        "label": "Shorting",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c522951d1f7d5a33",
+        "type": "group",
+        "z": "97fc3ce4b73122e2",
+        "name": "ESP Location wise",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "428afc86cfb3a739",
+            "22808d89c8c003e4",
+            "b92751a0bfde02e1",
+            "9a1f3058a31fcea9",
+            "c2136e85c296115b",
+            "a6cf8dc50a92a8da",
+            "9816f1ae4315b5ee",
+            "8ec26709362940ae",
+            "fac33e2a2e4c0b39",
+            "88ee85766e715823",
+            "b1fb91ee4e02fbbb",
+            "b17e2d368fc971ce",
+            "af8b9a82f28ff162",
+            "a35cdee368a56df9",
+            "b99c9d976b98c8ab",
+            "51d7bdf6eadc05c7",
+            "e1aea8efc2c4e9cf",
+            "26d8c352d276e13a",
+            "42c67b87bba77a5d",
+            "2864b346408229c0",
+            "9deb8d2e9668b3e2",
+            "35154d95f9206a62",
+            "e9b3bf3dc0a90a8b",
+            "1aba79a2504e2216",
+            "c1ca4ca163aec3e3",
+            "f8fdc00c526735c4",
+            "960d463c666c5d46",
+            "bcdeae6afde655f5",
+            "58efb08816bcd640",
+            "d11a72179934b812",
+            "ec172f944e3ab4bd",
+            "35001ce8a9688f2c",
+            "ca250ee504550b4e",
+            "62d9accc2d23110c",
+            "5e79a35f5f9b41c6",
+            "bd448f109bf4a199",
+            "bcadd2f39544e0fc",
+            "a0a8670ddc08cfd6",
+            "69cffb7c5cd28f42",
+            "d2c162ec14df7f86",
+            "1a40200a7ad37d62"
+        ],
+        "x": 174,
+        "y": 319,
+        "w": 1872,
+        "h": 602
+    },
+    {
+        "id": "428afc86cfb3a739",
+        "type": "ui_button",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "",
+        "group": "28300c43c47a8ed0",
+        "order": 6,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Tool Rack (ESP1)",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 290,
+        "y": 400,
+        "wires": [
+            [
+                "c2136e85c296115b",
+                "fac33e2a2e4c0b39"
+            ]
+        ]
+    },
+    {
+        "id": "22808d89c8c003e4",
+        "type": "ui_button",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "",
+        "group": "28300c43c47a8ed0",
+        "order": 2,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Machine (ESP2)",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 280,
+        "y": 600,
+        "wires": [
+            [
+                "e1aea8efc2c4e9cf",
+                "9deb8d2e9668b3e2"
+            ]
+        ]
+    },
+    {
+        "id": "b92751a0bfde02e1",
+        "type": "ui_button",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "",
+        "group": "28300c43c47a8ed0",
+        "order": 4,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Maintenance (ESP3)",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 300,
+        "y": 780,
+        "wires": [
+            [
+                "58efb08816bcd640",
+                "ca250ee504550b4e"
+            ]
+        ]
+    },
+    {
+        "id": "9a1f3058a31fcea9",
+        "type": "ui_table",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "group": "28300c43c47a8ed0",
+        "name": "",
+        "order": 9,
+        "width": 15,
+        "height": 5,
+        "columns": [
+            {
+                "field": "col5",
+                "title": "Date",
+                "width": "",
+                "align": "left",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col6",
+                "title": "Time",
+                "width": "",
+                "align": "left",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col1",
+                "title": "Tool ID",
+                "width": "",
+                "align": "center",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col2",
+                "title": "Part Name",
+                "width": "",
+                "align": "center",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col3",
+                "title": "Operation",
+                "width": "",
+                "align": "center",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col4",
+                "title": "Station ID",
+                "width": "",
+                "align": "left",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1970,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "c2136e85c296115b",
+        "type": "file in",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "",
+        "filename": "/home/iota/shared/sorting_trial.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 560,
+        "y": 400,
+        "wires": [
+            [
+                "a6cf8dc50a92a8da"
+            ]
+        ]
+    },
+    {
+        "id": "a6cf8dc50a92a8da",
+        "type": "csv",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "",
+        "sep": ";",
+        "hdrin": false,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 810,
+        "y": 400,
+        "wires": [
+            [
+                "b17e2d368fc971ce",
+                "b1fb91ee4e02fbbb"
+            ]
+        ]
+    },
+    {
+        "id": "9816f1ae4315b5ee",
+        "type": "debug",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "debug 55",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "8ec26709362940ae",
+        "type": "function",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "color",
+        "func": "var datas = msg.payload;\n\n// Create an array of messages to send to the Table UI node\nvar messages = [];\nfor (var i = 0; i < datas.length; i++) {\n  var data_name = datas[i]['col1'];\n  var message = {};\n  if (data_name === 'YY FIG ECN 01 . 3/4 .1') {\n    message = {\n      \"col1\": \"<b style='color:red'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:red'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:red'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:red'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:red'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:red'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  } else if (data_name === 'YY FIG YRA 00 . 1/5 . 1') {\n    message = {\n      \"col1\": \"<b style='color:green'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:green'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:green'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:green'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:green'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:green'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  } else {\n    message = {\n      \"col1\": \"<b style='color:blue'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:blue'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:blue'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:blue'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:blue'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:blue'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  }\n  messages.push(message);\n}\n\n// Send the messages to the Table UI node\nmsg.payload = messages;\nnode.send(msg);\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1670,
+        "y": 420,
+        "wires": [
+            [
+                "9a1f3058a31fcea9"
+            ]
+        ]
+    },
+    {
+        "id": "fac33e2a2e4c0b39",
+        "type": "file in",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "",
+        "filename": "/home/iota/shared/tool_list.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 590,
+        "y": 460,
+        "wires": [
+            [
+                "88ee85766e715823"
+            ]
+        ]
+    },
+    {
+        "id": "88ee85766e715823",
+        "type": "csv",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "",
+        "sep": ";",
+        "hdrin": false,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 830,
+        "y": 460,
+        "wires": [
+            [
+                "9816f1ae4315b5ee",
+                "b1fb91ee4e02fbbb"
+            ]
+        ]
+    },
+    {
+        "id": "b1fb91ee4e02fbbb",
+        "type": "join",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1090,
+        "y": 420,
+        "wires": [
+            [
+                "af8b9a82f28ff162",
+                "a35cdee368a56df9"
+            ]
+        ]
+    },
+    {
+        "id": "b17e2d368fc971ce",
+        "type": "debug",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "debug 56",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "af8b9a82f28ff162",
+        "type": "debug",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "debug 57",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1260,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "a35cdee368a56df9",
+        "type": "function",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "sorting_by_click",
+        "func": "var datas = msg.payload;\n\n  // Create an array of messages to send to the Table UI node\nvar messages = [];\n\nfor (var key in datas[1]) {\n  for (var jj = 0; jj < datas[0].length; jj++) {\n    if (datas[0][jj][\"col3\"] == datas[1][key]) {\n      messages.push(datas[0][jj]);\n      break;\n    }\n  }\n}\n\n  // Send the messages to the debugger/Table UI node\nmsg.payload = messages;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1300,
+        "y": 420,
+        "wires": [
+            [
+                "51d7bdf6eadc05c7"
+            ]
+        ]
+    },
+    {
+        "id": "b99c9d976b98c8ab",
+        "type": "debug",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "debug 58",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1700,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "51d7bdf6eadc05c7",
+        "type": "function",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "function 13",
+        "func": "var datas = msg.payload;\n\nvar messages = [];\nfor (var i = 0; i < datas.length; i++){\n  if (datas[i].col6 == \"ESP1\"){\n    messages.push(datas[i]);\n  }\n}\n  // Send the messages to the debugger/Table UI node\nmsg.payload = messages;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1490,
+        "y": 420,
+        "wires": [
+            [
+                "b99c9d976b98c8ab",
+                "8ec26709362940ae"
+            ]
+        ]
+    },
+    {
+        "id": "e1aea8efc2c4e9cf",
+        "type": "file in",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "",
+        "filename": "/home/iota/shared/sorting_trial.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 540,
+        "y": 600,
+        "wires": [
+            [
+                "26d8c352d276e13a"
+            ]
+        ]
+    },
+    {
+        "id": "26d8c352d276e13a",
+        "type": "csv",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "",
+        "sep": ";",
+        "hdrin": false,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 790,
+        "y": 600,
+        "wires": [
+            [
+                "1aba79a2504e2216",
+                "e9b3bf3dc0a90a8b"
+            ]
+        ]
+    },
+    {
+        "id": "42c67b87bba77a5d",
+        "type": "debug",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "debug 59",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "2864b346408229c0",
+        "type": "function",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "color",
+        "func": "var datas = msg.payload;\n\n// Create an array of messages to send to the Table UI node\nvar messages = [];\nfor (var i = 0; i < datas.length; i++) {\n  var data_name = datas[i]['col1'];\n  var message = {};\n  if (data_name === 'YY FIG ECN 01 . 3/4 .1') {\n    message = {\n      \"col1\": \"<b style='color:red'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:red'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:red'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:red'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:red'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:red'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  } else if (data_name === 'YY FIG YRA 00 . 1/5 . 1') {\n    message = {\n      \"col1\": \"<b style='color:green'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:green'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:green'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:green'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:green'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:green'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  } else {\n    message = {\n      \"col1\": \"<b style='color:blue'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:blue'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:blue'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:blue'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:blue'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:blue'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  }\n  messages.push(message);\n}\n\n// Send the messages to the Table UI node\nmsg.payload = messages;\nnode.send(msg);\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1650,
+        "y": 620,
+        "wires": [
+            [
+                "9a1f3058a31fcea9"
+            ]
+        ]
+    },
+    {
+        "id": "9deb8d2e9668b3e2",
+        "type": "file in",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "",
+        "filename": "/home/iota/shared/tool_list.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 570,
+        "y": 660,
+        "wires": [
+            [
+                "35154d95f9206a62"
+            ]
+        ]
+    },
+    {
+        "id": "35154d95f9206a62",
+        "type": "csv",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "",
+        "sep": ";",
+        "hdrin": false,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 810,
+        "y": 660,
+        "wires": [
+            [
+                "42c67b87bba77a5d",
+                "e9b3bf3dc0a90a8b"
+            ]
+        ]
+    },
+    {
+        "id": "e9b3bf3dc0a90a8b",
+        "type": "join",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1070,
+        "y": 620,
+        "wires": [
+            [
+                "c1ca4ca163aec3e3",
+                "f8fdc00c526735c4"
+            ]
+        ]
+    },
+    {
+        "id": "1aba79a2504e2216",
+        "type": "debug",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "debug 60",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "c1ca4ca163aec3e3",
+        "type": "debug",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "debug 61",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1200,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "f8fdc00c526735c4",
+        "type": "function",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "sorting_by_click",
+        "func": "var datas = msg.payload;\n\n  // Create an array of messages to send to the Table UI node\nvar messages = [];\n\nfor (var key in datas[1]) {\n  for (var jj = 0; jj < datas[0].length; jj++) {\n    if (datas[0][jj][\"col3\"] == datas[1][key]) {\n      messages.push(datas[0][jj]);\n      break;\n    }\n  }\n}\n\n  // Send the messages to the debugger/Table UI node\nmsg.payload = messages;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1280,
+        "y": 620,
+        "wires": [
+            [
+                "bcdeae6afde655f5",
+                "1a40200a7ad37d62"
+            ]
+        ]
+    },
+    {
+        "id": "960d463c666c5d46",
+        "type": "debug",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "debug 62",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1680,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "bcdeae6afde655f5",
+        "type": "function",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "function 14",
+        "func": "var datas = msg.payload;\n\nvar messages = [];\nfor (var i = 0; i < datas.length; i++){\n  if (datas[i].col6 == \"ESP2\"){\n    messages.push(datas[i]);\n  }\n}\n  // Send the messages to the debugger/Table UI node\nmsg.payload = messages;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1470,
+        "y": 620,
+        "wires": [
+            [
+                "960d463c666c5d46",
+                "2864b346408229c0"
+            ]
+        ]
+    },
+    {
+        "id": "58efb08816bcd640",
+        "type": "file in",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "",
+        "filename": "/home/iota/shared/sorting_trial.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 600,
+        "y": 780,
+        "wires": [
+            [
+                "d11a72179934b812"
+            ]
+        ]
+    },
+    {
+        "id": "d11a72179934b812",
+        "type": "csv",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "",
+        "sep": ";",
+        "hdrin": false,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 850,
+        "y": 780,
+        "wires": [
+            [
+                "bd448f109bf4a199",
+                "5e79a35f5f9b41c6"
+            ]
+        ]
+    },
+    {
+        "id": "ec172f944e3ab4bd",
+        "type": "debug",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "debug 63",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "35001ce8a9688f2c",
+        "type": "function",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "color",
+        "func": "var datas = msg.payload;\n\n// Create an array of messages to send to the Table UI node\nvar messages = [];\nfor (var i = 0; i < datas.length; i++) {\n  var data_name = datas[i]['col1'];\n  var message = {};\n  if (data_name === 'YY FIG ECN 01 . 3/4 .1') {\n    message = {\n      \"col1\": \"<b style='color:red'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:red'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:red'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:red'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:red'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:red'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  } else if (data_name === 'YY FIG YRA 00 . 1/5 . 1') {\n    message = {\n      \"col1\": \"<b style='color:green'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:green'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:green'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:green'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:green'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:green'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  } else {\n    message = {\n      \"col1\": \"<b style='color:blue'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:blue'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:blue'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:blue'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:blue'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:blue'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  }\n  messages.push(message);\n}\n\n// Send the messages to the Table UI node\nmsg.payload = messages;\nnode.send(msg);\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1710,
+        "y": 800,
+        "wires": [
+            [
+                "9a1f3058a31fcea9"
+            ]
+        ]
+    },
+    {
+        "id": "ca250ee504550b4e",
+        "type": "file in",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "",
+        "filename": "/home/iota/shared/tool_list.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 630,
+        "y": 840,
+        "wires": [
+            [
+                "62d9accc2d23110c"
+            ]
+        ]
+    },
+    {
+        "id": "62d9accc2d23110c",
+        "type": "csv",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "",
+        "sep": ";",
+        "hdrin": false,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 870,
+        "y": 840,
+        "wires": [
+            [
+                "ec172f944e3ab4bd",
+                "5e79a35f5f9b41c6"
+            ]
+        ]
+    },
+    {
+        "id": "5e79a35f5f9b41c6",
+        "type": "join",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1130,
+        "y": 800,
+        "wires": [
+            [
+                "bcadd2f39544e0fc",
+                "a0a8670ddc08cfd6"
+            ]
+        ]
+    },
+    {
+        "id": "bd448f109bf4a199",
+        "type": "debug",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "debug 64",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "bcadd2f39544e0fc",
+        "type": "debug",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "debug 65",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "a0a8670ddc08cfd6",
+        "type": "function",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "sorting_by_click",
+        "func": "var datas = msg.payload;\n\n  // Create an array of messages to send to the Table UI node\nvar messages = [];\n\nfor (var key in datas[1]) {\n  for (var jj = 0; jj < datas[0].length; jj++) {\n    if (datas[0][jj][\"col3\"] == datas[1][key]) {\n      messages.push(datas[0][jj]);\n      break;\n    }\n  }\n}\n\n  // Send the messages to the debugger/Table UI node\nmsg.payload = messages;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 800,
+        "wires": [
+            [
+                "d2c162ec14df7f86"
+            ]
+        ]
+    },
+    {
+        "id": "69cffb7c5cd28f42",
+        "type": "debug",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "debug 66",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1740,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "d2c162ec14df7f86",
+        "type": "function",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "function 15",
+        "func": "var datas = msg.payload;\n\nvar messages = [];\nfor (var i = 0; i < datas.length; i++){\n  if (datas[i].col6 == \"ESP3\"){\n    messages.push(datas[i]);\n  }\n}\n  // Send the messages to the debugger/Table UI node\nmsg.payload = messages;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1530,
+        "y": 800,
+        "wires": [
+            [
+                "69cffb7c5cd28f42",
+                "35001ce8a9688f2c"
+            ]
+        ]
+    },
+    {
+        "id": "1a40200a7ad37d62",
+        "type": "debug",
+        "z": "97fc3ce4b73122e2",
+        "g": "c522951d1f7d5a33",
+        "name": "debug 67",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1440,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "67ae6c259b097d0a",
+        "type": "ui_spacer",
+        "z": "97fc3ce4b73122e2",
+        "name": "spacer",
+        "group": "28300c43c47a8ed0",
+        "order": 1,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "f35507f722c789e6",
+        "type": "ui_spacer",
+        "z": "97fc3ce4b73122e2",
+        "name": "spacer",
+        "group": "28300c43c47a8ed0",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b86ca9b981b4d7d1",
+        "type": "ui_spacer",
+        "z": "97fc3ce4b73122e2",
+        "name": "spacer",
+        "group": "28300c43c47a8ed0",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "281a038a1a86e52d",
+        "type": "ui_spacer",
+        "z": "97fc3ce4b73122e2",
+        "name": "spacer",
+        "group": "28300c43c47a8ed0",
+        "order": 7,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "7c24dae510371384",
+        "type": "ui_spacer",
+        "z": "97fc3ce4b73122e2",
+        "name": "spacer",
+        "group": "28300c43c47a8ed0",
+        "order": 8,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "28300c43c47a8ed0",
+        "type": "ui_group",
+        "name": "RealTime",
+        "tab": "c0a31d747ed334e9",
+        "order": 1,
+        "disp": true,
+        "width": 15,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c0a31d747ed334e9",
+        "type": "ui_tab",
+        "name": "DieTracking",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    }
+]

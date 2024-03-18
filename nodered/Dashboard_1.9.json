@@ -1,0 +1,2306 @@
+[
+    {
+        "id": "4f082213ea077df6",
+        "type": "tab",
+        "label": "Dashboard 1.9 ",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ef83b368f27bc9ac",
+        "type": "group",
+        "z": "4f082213ea077df6",
+        "name": "RFID reading",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "15ec7be181d25bf5",
+            "348a128e4715394c",
+            "aa24114702440cc0",
+            "747a1ebae3cf0358",
+            "39a0bcfa618f62a2",
+            "59a995b4f0ef8a87",
+            "f299de67333b3bec",
+            "703145ec892394cc",
+            "c93d15fb3c4b69bc",
+            "0c46d063fb0ab6c6",
+            "776383ea06b94975",
+            "2e5c78aea2a5758f"
+        ],
+        "x": 134,
+        "y": 119,
+        "w": 1712,
+        "h": 302
+    },
+    {
+        "id": "cb6b91492886ac1a",
+        "type": "group",
+        "z": "4f082213ea077df6",
+        "name": "History",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "87c28da3489139c1",
+            "d615d1597311ef1d",
+            "76cc04d573c4d99d",
+            "f3e7aa60de75ba84",
+            "d8ed607e90c60a52",
+            "c8bfd7252b0f8bda",
+            "9c3eac3178a924f5",
+            "0428375937ee8354",
+            "8b17f71acab75c70",
+            "865448f3abf4da00",
+            "24b8457b9b80f699",
+            "8def49d0bbda5ed7",
+            "6985c5d89053a0a2"
+        ],
+        "x": 135,
+        "y": 679,
+        "w": 1192,
+        "h": 302
+    },
+    {
+        "id": "ef41a7f7fa62938d",
+        "type": "group",
+        "z": "4f082213ea077df6",
+        "name": "Real Time",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "d0a2260aaa59f288",
+            "f5b196fad04f2980",
+            "0faebf4b472e3ec7",
+            "cc13eff16c450ab2",
+            "3ba7af2dd0381923",
+            "25b6046a2c264d3d",
+            "3ed9216b3080556e"
+        ],
+        "x": 134,
+        "y": 459,
+        "w": 1152,
+        "h": 142
+    },
+    {
+        "id": "81dd4a63d29ced21",
+        "type": "group",
+        "z": "4f082213ea077df6",
+        "name": "ESP Location wise",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "d48bdb6b1ae0e5a6",
+            "f49b65cbedda4e8f",
+            "98935f9341e277f2",
+            "81551d7bf1efe138",
+            "6f897d679a122992",
+            "6354dcdd528c70f1",
+            "88ba219016ac3b0f",
+            "dbf80eec0a31fb3b",
+            "458e17dfeeb7f377",
+            "9986f81a62b1c0f3",
+            "d5d3766eaaf0811a",
+            "6f76b909f2583ef8",
+            "b8f9fa9b65e1a253",
+            "cbfad7ca9a2c5df5",
+            "e362610c23b0b257",
+            "83c1df536c7f5c58",
+            "2677cb8e18501765",
+            "130af8a975fdf00f",
+            "404e23568cbb3fbd",
+            "2f09103e2ec2ea80",
+            "ba7c8e9e7998fe96",
+            "22f40121e65d61df",
+            "4c8e1a4dd34a4f5c",
+            "cba5de18c7b21828",
+            "9df8b16aee65d29b",
+            "d43d30837539329c",
+            "166b31664079ef64",
+            "ce31fc57bd2ad8e1",
+            "3b8ce02b560da973",
+            "4baa6eb8441a6aef",
+            "f1aafe4895d4ebe5",
+            "41b5e3da5c7257d1",
+            "21f44c8e6ee0d55d",
+            "ac2acdad3b0d5057",
+            "a01083d0c5110613",
+            "20143ab59bf0dac5",
+            "14887217e6dd783b",
+            "477c2f64433e3560",
+            "b54ae622f887d290",
+            "ea59e92642708a50",
+            "18fae94a8e922b25",
+            "291fe7e48aa279ca",
+            "1efac3b7b766dbc9",
+            "c4c274a9bd227219",
+            "ee3d6a58211bbaa5"
+        ],
+        "x": 134,
+        "y": 1019,
+        "w": 1872,
+        "h": 602
+    },
+    {
+        "id": "15ec7be181d25bf5",
+        "type": "file in",
+        "z": "4f082213ea077df6",
+        "g": "ef83b368f27bc9ac",
+        "name": "",
+        "filename": "/home/iota/shared/Book.xlsx",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "allProps": false,
+        "x": 560,
+        "y": 200,
+        "wires": [
+            [
+                "348a128e4715394c"
+            ]
+        ]
+    },
+    {
+        "id": "348a128e4715394c",
+        "type": "xlsx",
+        "z": "4f082213ea077df6",
+        "g": "ef83b368f27bc9ac",
+        "name": "die_data",
+        "sheets": "first",
+        "multi": "one",
+        "parse": "rows",
+        "map": "",
+        "x": 800,
+        "y": 200,
+        "wires": [
+            [
+                "aa24114702440cc0",
+                "703145ec892394cc"
+            ]
+        ]
+    },
+    {
+        "id": "aa24114702440cc0",
+        "type": "join",
+        "z": "4f082213ea077df6",
+        "g": "ef83b368f27bc9ac",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1010,
+        "y": 240,
+        "wires": [
+            [
+                "f299de67333b3bec",
+                "59a995b4f0ef8a87"
+            ]
+        ]
+    },
+    {
+        "id": "747a1ebae3cf0358",
+        "type": "inject",
+        "z": "4f082213ea077df6",
+        "g": "ef83b368f27bc9ac",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "xls",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 200,
+        "wires": [
+            [
+                "15ec7be181d25bf5"
+            ]
+        ]
+    },
+    {
+        "id": "39a0bcfa618f62a2",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "ef83b368f27bc9ac",
+        "name": "debug 17",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1400,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "59a995b4f0ef8a87",
+        "type": "function",
+        "z": "4f082213ea077df6",
+        "g": "ef83b368f27bc9ac",
+        "name": "function 6",
+        "func": "//var d = new Date();\n\n// var newMsg = {payload: msg.payload.xls[1][0]}\n/*\nvar l ={x: msg.payload.xls.length}\n\n\n\nvar rfid = msg.payload.RFID.slice(5,15)\nvar esp = msg.payload.RFID.slice(16,21)\n// var sum = 0\n//for(let i=1; i<=(msg.payload.xls.length); i++){\nfor( i=1; i<=l.x; i++){\n     //i = Number.parseInt(i);\n    // sum = sum + i\n\n    if (msg.payload.xls[i][0] == rfid.toString()){\n    // if (msg.payload.xls[i][0] == \"0x53ae22ad\" ){\n    var newMsg = { tool_id: msg.payload.xls[i][1], Part: msg.payload.xls[i][2], Operation: msg.payload.xls[i][3], Station_id:esp }\n    // if (msg.payload.xls[2][0] == rfid.toString()){\n    // var newMsg = { tool_id: msg.payload.xls[2][1], Part: msg.payload.xls[2][2], Operation: msg.payload.xls[2][3], Station_id:esp }\n    \n}\n}\n// var newMsg ={summation : sum}\n\nreturn newMsg;\n\n*/\nvar d = new Date()\n\n\nvar newMsg = {};\nvar l = { x: msg.payload.xls.length };\n\nvar rfid = msg.payload.RFID.slice(5, 15);\nvar esp = msg.payload.RFID.slice(16, 21);\n\nfor (var i = 0; i < l.x; i++) {\n    if (msg.payload.xls[i] && msg.payload.xls[i][0] == rfid.toString()) {\n        newMsg.payload = {\n            tool_id: msg.payload.xls[i][1],\n            Part: msg.payload.xls[i][2],\n            Operation: msg.payload.xls[i][3],\n            Station_id: esp,\n            Date:d.getDate()+\"/\"+(d.getMonth()+1)+ \"/\"+ d.getFullYear(),\n            Time: d.getHours()+\":\"+d.getMinutes()\n            //srvtime:new Date(Date.now()+(5*60*60*1000))\n           // srvtime:new Date(new Date().getTime()+5*3600*1000)\n\n        };\n        break; // Once found, exit the loop\n    }\n}\n\nreturn newMsg;\n\n\n\n\n\n\n\n\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1200,
+        "y": 280,
+        "wires": [
+            [
+                "0c46d063fb0ab6c6",
+                "39a0bcfa618f62a2"
+            ]
+        ]
+    },
+    {
+        "id": "f299de67333b3bec",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "ef83b368f27bc9ac",
+        "name": "debug 18",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1180,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "703145ec892394cc",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "ef83b368f27bc9ac",
+        "name": "debug 19",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "c93d15fb3c4b69bc",
+        "type": "mqtt in",
+        "z": "4f082213ea077df6",
+        "g": "ef83b368f27bc9ac",
+        "name": "",
+        "topic": "RFID",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "e1825ce9bc1c0008",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 790,
+        "y": 260,
+        "wires": [
+            [
+                "aa24114702440cc0"
+            ]
+        ]
+    },
+    {
+        "id": "0c46d063fb0ab6c6",
+        "type": "json",
+        "z": "4f082213ea077df6",
+        "g": "ef83b368f27bc9ac",
+        "name": "",
+        "property": "object",
+        "action": "",
+        "pretty": false,
+        "x": 1350,
+        "y": 380,
+        "wires": [
+            [
+                "776383ea06b94975"
+            ]
+        ]
+    },
+    {
+        "id": "776383ea06b94975",
+        "type": "csv",
+        "z": "4f082213ea077df6",
+        "g": "ef83b368f27bc9ac",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "tool_id,Part,Operation,Station_id,Date,Time",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 1490,
+        "y": 380,
+        "wires": [
+            [
+                "2e5c78aea2a5758f"
+            ]
+        ]
+    },
+    {
+        "id": "2e5c78aea2a5758f",
+        "type": "file",
+        "z": "4f082213ea077df6",
+        "g": "ef83b368f27bc9ac",
+        "name": "",
+        "filename": "/home/iota/shared/trial.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1710,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d0a2260aaa59f288",
+        "type": "inject",
+        "z": "4f082213ea077df6",
+        "g": "ef41a7f7fa62938d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 560,
+        "wires": [
+            [
+                "f5b196fad04f2980"
+            ]
+        ]
+    },
+    {
+        "id": "f5b196fad04f2980",
+        "type": "file in",
+        "z": "4f082213ea077df6",
+        "g": "ef41a7f7fa62938d",
+        "name": "",
+        "filename": "/home/iota/shared/trial.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 491,
+        "y": 560,
+        "wires": [
+            [
+                "0faebf4b472e3ec7"
+            ]
+        ]
+    },
+    {
+        "id": "0faebf4b472e3ec7",
+        "type": "csv",
+        "z": "4f082213ea077df6",
+        "g": "ef41a7f7fa62938d",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 710,
+        "y": 560,
+        "wires": [
+            [
+                "cc13eff16c450ab2",
+                "3ba7af2dd0381923"
+            ]
+        ]
+    },
+    {
+        "id": "cc13eff16c450ab2",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "ef41a7f7fa62938d",
+        "name": "debug 46",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "3ba7af2dd0381923",
+        "type": "sort",
+        "z": "4f082213ea077df6",
+        "g": "ef41a7f7fa62938d",
+        "name": "",
+        "order": "ascending",
+        "as_num": false,
+        "target": "payload",
+        "targetType": "msg",
+        "msgKey": "payload",
+        "msgKeyType": "elem",
+        "seqKey": "payload",
+        "seqKeyType": "msg",
+        "x": 890,
+        "y": 560,
+        "wires": [
+            [
+                "3ed9216b3080556e"
+            ]
+        ]
+    },
+    {
+        "id": "87c28da3489139c1",
+        "type": "ui_dropdown",
+        "z": "4f082213ea077df6",
+        "g": "cb6b91492886ac1a",
+        "name": "",
+        "label": "Tool ID",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "16a5a776562df867",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "YY FIG ECN 01 . 3/4 .1",
+                "value": "YY FIG ECN 01 . 3/4 .1",
+                "type": "str"
+            },
+            {
+                "label": "YY FIG YRA 00 . 1/5 . 1",
+                "value": "YY FIG YRA 00 . 1/5 . 1",
+                "type": "str"
+            },
+            {
+                "label": "YY FIG YRA1 03 . 3/4 . 1",
+                "value": "YY FIG YRA1 03 . 3/4 . 1",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 380,
+        "y": 860,
+        "wires": [
+            [
+                "f3e7aa60de75ba84"
+            ]
+        ]
+    },
+    {
+        "id": "d615d1597311ef1d",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "cb6b91492886ac1a",
+        "name": "debug 47",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1221,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "76cc04d573c4d99d",
+        "type": "ui_button",
+        "z": "4f082213ea077df6",
+        "g": "cb6b91492886ac1a",
+        "name": "",
+        "group": "16a5a776562df867",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "clear",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "C",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 211,
+        "y": 820,
+        "wires": [
+            [
+                "8b17f71acab75c70",
+                "87c28da3489139c1"
+            ]
+        ]
+    },
+    {
+        "id": "f3e7aa60de75ba84",
+        "type": "join",
+        "z": "4f082213ea077df6",
+        "g": "cb6b91492886ac1a",
+        "name": "User",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 671,
+        "y": 880,
+        "wires": [
+            [
+                "d8ed607e90c60a52",
+                "8def49d0bbda5ed7"
+            ]
+        ]
+    },
+    {
+        "id": "d8ed607e90c60a52",
+        "type": "join",
+        "z": "4f082213ea077df6",
+        "g": "cb6b91492886ac1a",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 851,
+        "y": 820,
+        "wires": [
+            [
+                "c8bfd7252b0f8bda",
+                "9c3eac3178a924f5"
+            ]
+        ]
+    },
+    {
+        "id": "c8bfd7252b0f8bda",
+        "type": "function",
+        "z": "4f082213ea077df6",
+        "g": "cb6b91492886ac1a",
+        "name": "function 9",
+        "func": "\n// var newMsg = {};\n\n// var l = { x: msg.payload.xls.length };\n\nvar l = {x: msg.payload[0].length}\nvar array = [];\n// var rfid = msg.payload.RFID.slice(5, 15);\n\n// var esp = msg.payload.RFID.slice(16, 21);\n\nfor (var i = 0; i< l.x; i++){\n    if (msg.payload[0][i][\"col1\"] ==msg.payload[1][0] && msg.payload[0][i][\"col5\"] ==msg.payload[1][1] ){\n        array.push(msg.payload[0][i])\n    }\n}\n//     else{\n//         var newMsg = { pass: 0}\n//     }\n// }\n// for (var i = 0; i < l.x; i++) {\n//     if (msg.payload.xls[i] && msg.payload.xls[i][0] == rfid.toString()) {\n//         newMsg.payload = {\n//             tool_id: msg.payload.xls[i][1],\n//             Part: msg.payload.xls[i][2],\n//             Operation: msg.payload.xls[i][3],\n//             Station_id: esp,\n//             Date:d.getDate()+\"/\"+(d.getMonth()+1)+ \"/\"+ d.getFullYear(),\n//             Time: d.getHours()+\":\"+d.getMinutes()\n//             //srvtime:new Date(Date.now()+(5*60*60*1000))\n//            // srvtime:new Date(new Date().getTime()+5*3600*1000)\n\n//         };\n//         break; // Once found, exit the loop\n//     }\n// }\nvar newMsg = {payload: array};\nreturn newMsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1041,
+        "y": 820,
+        "wires": [
+            [
+                "d615d1597311ef1d",
+                "0428375937ee8354"
+            ]
+        ]
+    },
+    {
+        "id": "9c3eac3178a924f5",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "cb6b91492886ac1a",
+        "name": "debug 48",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 981,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "0428375937ee8354",
+        "type": "ui_table",
+        "z": "4f082213ea077df6",
+        "g": "cb6b91492886ac1a",
+        "group": "16a5a776562df867",
+        "name": "",
+        "order": 4,
+        "width": 20,
+        "height": 6,
+        "columns": [
+            {
+                "field": "col5",
+                "title": "Date",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col6",
+                "title": "Time",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col1",
+                "title": "Tool ID",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col2",
+                "title": "Part Name",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col3",
+                "title": "Operation",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col4",
+                "title": "Station ID",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1211,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "8b17f71acab75c70",
+        "type": "file in",
+        "z": "4f082213ea077df6",
+        "g": "cb6b91492886ac1a",
+        "name": "",
+        "filename": "/home/iota/shared/trial.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 452,
+        "y": 720,
+        "wires": [
+            [
+                "865448f3abf4da00"
+            ]
+        ]
+    },
+    {
+        "id": "865448f3abf4da00",
+        "type": "csv",
+        "z": "4f082213ea077df6",
+        "g": "cb6b91492886ac1a",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 671,
+        "y": 720,
+        "wires": [
+            [
+                "d8ed607e90c60a52"
+            ]
+        ]
+    },
+    {
+        "id": "25b6046a2c264d3d",
+        "type": "ui_table",
+        "z": "4f082213ea077df6",
+        "g": "ef41a7f7fa62938d",
+        "group": "77d63e1276a26d3e",
+        "name": "",
+        "order": 1,
+        "width": 17,
+        "height": 5,
+        "columns": [
+            {
+                "field": "col5",
+                "title": "Date",
+                "width": "80",
+                "align": "center",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col6",
+                "title": "Time",
+                "width": "50",
+                "align": "center",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col1",
+                "title": "Tool ID",
+                "width": "",
+                "align": "center",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col2",
+                "title": "Part Name",
+                "width": "",
+                "align": "center",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col3",
+                "title": "Operation",
+                "width": "",
+                "align": "center",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col4",
+                "title": "Station ID",
+                "width": "60",
+                "align": "center",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1210,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "24b8457b9b80f699",
+        "type": "ui_date_picker",
+        "z": "4f082213ea077df6",
+        "g": "cb6b91492886ac1a",
+        "name": "",
+        "label": "date",
+        "group": "16a5a776562df867",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 370,
+        "y": 940,
+        "wires": [
+            [
+                "6985c5d89053a0a2"
+            ]
+        ]
+    },
+    {
+        "id": "8def49d0bbda5ed7",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "cb6b91492886ac1a",
+        "name": "debug 49",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "6985c5d89053a0a2",
+        "type": "function",
+        "z": "4f082213ea077df6",
+        "g": "cb6b91492886ac1a",
+        "name": "function 11",
+        "func": "// Create a new Date object from the msg.payload\nvar date = new Date(msg.payload);\n\n// Format the date as \"dd/mm/yyyy\"\nvar formattedDate = date.getDate() + \"/\" + (date.getMonth() + 1) + \"/\" + date.getFullYear();\n\n// Set the formatted date as the msg.payload\nmsg.payload = formattedDate;\n\n// Return the modified msg object\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 940,
+        "wires": [
+            [
+                "f3e7aa60de75ba84"
+            ]
+        ]
+    },
+    {
+        "id": "3ed9216b3080556e",
+        "type": "function",
+        "z": "4f082213ea077df6",
+        "g": "ef41a7f7fa62938d",
+        "name": "color",
+        "func": "var datas = msg.payload;\n\n// Create an array of messages to send to the Table UI node\nvar messages = [];\nfor (var i = 0; i < datas.length; i++) {\n  var data_name = datas[i]['col1'];\n  var message = {};\n  if (data_name === 'YY FIG ECN 01 . 3/4 .1') {\n    message = {\n      \"col1\": \"<b style='color:red'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:red'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:red'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:red'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:red'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:red'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  } else if (data_name === 'YY FIG YRA 00 . 1/5 . 1') {\n    message = {\n      \"col1\": \"<b style='color:green'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:green'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:green'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:green'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:green'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:green'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  } else {\n    message = {\n      \"col1\": \"<b style='color:blue'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:blue'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:blue'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:blue'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:blue'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:blue'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  }\n  messages.push(message);\n}\n\n// Send the messages to the Table UI node\nmsg.payload = messages;\nnode.send(msg);\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 560,
+        "wires": [
+            [
+                "25b6046a2c264d3d"
+            ]
+        ]
+    },
+    {
+        "id": "1efb992589107dc9",
+        "type": "ui_button",
+        "z": "4f082213ea077df6",
+        "name": "",
+        "group": "7d3e77a46097edfa",
+        "order": 2,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "History",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "history",
+        "icon": "",
+        "payload": "{\"group\":{\"hide\":[\"AtomOneTechnologies_RealTime\",\"AtomOneTechnologies_ControlSpecific\",\"AtomOneTechnologies_MMT\"],\"show\":[\"AtomOneTechnologies_Control\",\"AtomOneTechnologies_History\"]}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 220,
+        "y": 1920,
+        "wires": [
+            [
+                "a228355472a924ce"
+            ]
+        ]
+    },
+    {
+        "id": "a228355472a924ce",
+        "type": "ui_ui_control",
+        "z": "4f082213ea077df6",
+        "name": "",
+        "events": "all",
+        "x": 500,
+        "y": 1900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "89f3c33f68f6495b",
+        "type": "ui_button",
+        "z": "4f082213ea077df6",
+        "name": "",
+        "group": "7d3e77a46097edfa",
+        "order": 1,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "RealTime",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "realtime",
+        "icon": "",
+        "payload": "{\"group\":{\"hide\":[\"AtomOneTechnologies_History\",\"AtomOneTechnologies_MMT\"],\"show\":[\"AtomOneTechnologies_Control\",\"AtomOneTechnologies_ControlSpecific\",\"AtomOneTechnologies_RealTime\"]}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 220,
+        "y": 1860,
+        "wires": [
+            [
+                "a228355472a924ce"
+            ]
+        ]
+    },
+    {
+        "id": "d48bdb6b1ae0e5a6",
+        "type": "ui_button",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "group": "68ab243347a61892",
+        "order": 6,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Tool Rack (ESP1)",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "toolrack",
+        "icon": "",
+        "payload": "{\"group\":{\"hide\":[\"AtomOneTechnologies_History\",\"AtomOneTechnologies_RealTime\"],\"show\":[\"AtomOneTechnologies_Control\",\"AtomOneTechnologies_MMT\",\"AtomOneTechnologies_ControlSpecific\"]}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 250,
+        "y": 1100,
+        "wires": [
+            [
+                "6f897d679a122992",
+                "458e17dfeeb7f377",
+                "a228355472a924ce"
+            ]
+        ]
+    },
+    {
+        "id": "f49b65cbedda4e8f",
+        "type": "ui_button",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "group": "68ab243347a61892",
+        "order": 4,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Machine (ESP2)",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "machine",
+        "icon": "",
+        "payload": "{\"group\":{\"hide\":[\"AtomOneTechnologies_History\",\"AtomOneTechnologies_RealTime\"],\"show\":[\"AtomOneTechnologies_Control\",\"AtomOneTechnologies_MMT\",\"AtomOneTechnologies_ControlSpecific\"]}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 240,
+        "y": 1300,
+        "wires": [
+            [
+                "2677cb8e18501765",
+                "ba7c8e9e7998fe96",
+                "a228355472a924ce"
+            ]
+        ]
+    },
+    {
+        "id": "98935f9341e277f2",
+        "type": "ui_button",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "group": "68ab243347a61892",
+        "order": 2,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Maintenance (ESP3)",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "maintenance",
+        "icon": "",
+        "payload": "{\"group\":{\"hide\":[\"AtomOneTechnologies_History\",\"AtomOneTechnologies_RealTime\"],\"show\":[\"AtomOneTechnologies_Control\",\"AtomOneTechnologies_MMT\",\"AtomOneTechnologies_ControlSpecific\"]}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 260,
+        "y": 1480,
+        "wires": [
+            [
+                "3b8ce02b560da973",
+                "21f44c8e6ee0d55d",
+                "a228355472a924ce"
+            ]
+        ]
+    },
+    {
+        "id": "81551d7bf1efe138",
+        "type": "ui_table",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "group": "814b10eb60723c9a",
+        "name": "",
+        "order": 1,
+        "width": 20,
+        "height": 5,
+        "columns": [
+            {
+                "field": "col5",
+                "title": "Date",
+                "width": "",
+                "align": "left",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col6",
+                "title": "Time",
+                "width": "",
+                "align": "left",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col1",
+                "title": "Tool ID",
+                "width": "",
+                "align": "center",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col2",
+                "title": "Part Name",
+                "width": "",
+                "align": "center",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col3",
+                "title": "Operation",
+                "width": "",
+                "align": "center",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col4",
+                "title": "Station ID",
+                "width": "",
+                "align": "left",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1930,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "6f897d679a122992",
+        "type": "file in",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "filename": "/home/iota/shared/trial.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 490,
+        "y": 1100,
+        "wires": [
+            [
+                "6354dcdd528c70f1"
+            ]
+        ]
+    },
+    {
+        "id": "6354dcdd528c70f1",
+        "type": "csv",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "sep": ",",
+        "hdrin": false,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 770,
+        "y": 1100,
+        "wires": [
+            [
+                "6f76b909f2583ef8",
+                "291fe7e48aa279ca"
+            ]
+        ]
+    },
+    {
+        "id": "88ba219016ac3b0f",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "debug 68",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "dbf80eec0a31fb3b",
+        "type": "function",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "color",
+        "func": "var datas = msg.payload;\n\n// Create an array of messages to send to the Table UI node\nvar messages = [];\nfor (var i = 0; i < datas.length; i++) {\n  var data_name = datas[i]['col1'];\n  var message = {};\n  if (data_name === 'YY FIG ECN 01 . 3/4 .1') {\n    message = {\n      \"col1\": \"<b style='color:red'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:red'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:red'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:red'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:red'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:red'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  } else if (data_name === 'YY FIG YRA 00 . 1/5 . 1') {\n    message = {\n      \"col1\": \"<b style='color:green'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:green'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:green'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:green'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:green'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:green'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  } else {\n    message = {\n      \"col1\": \"<b style='color:blue'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:blue'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:blue'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:blue'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:blue'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:blue'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  }\n  messages.push(message);\n}\n\n// Send the messages to the Table UI node\nmsg.payload = messages;\nnode.send(msg);\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1630,
+        "y": 1120,
+        "wires": [
+            [
+                "81551d7bf1efe138"
+            ]
+        ]
+    },
+    {
+        "id": "458e17dfeeb7f377",
+        "type": "file in",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "filename": "/home/iota/shared/tool_list.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 550,
+        "y": 1160,
+        "wires": [
+            [
+                "9986f81a62b1c0f3"
+            ]
+        ]
+    },
+    {
+        "id": "9986f81a62b1c0f3",
+        "type": "csv",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "sep": ";",
+        "hdrin": false,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 790,
+        "y": 1160,
+        "wires": [
+            [
+                "88ba219016ac3b0f",
+                "d5d3766eaaf0811a"
+            ]
+        ]
+    },
+    {
+        "id": "d5d3766eaaf0811a",
+        "type": "join",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1070,
+        "y": 1140,
+        "wires": [
+            [
+                "b8f9fa9b65e1a253",
+                "cbfad7ca9a2c5df5"
+            ]
+        ]
+    },
+    {
+        "id": "6f76b909f2583ef8",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "debug 69",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "b8f9fa9b65e1a253",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "debug 70",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1220,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "cbfad7ca9a2c5df5",
+        "type": "function",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "sorting_by_click",
+        "func": "var datas = msg.payload;\n\n  // Create an array of messages to send to the Table UI node\nvar messages = [];\n\nfor (var key in datas[0]) {\n  for (var jj = 0; jj < datas[1].length; jj++) {\n    if (datas[1][jj][\"col1\"] == datas[0][key]) {\n      messages.push(datas[1][jj]);\n      break;\n    }\n  }\n}\n\n  // Send the messages to the debugger/Table UI node\nmsg.payload = messages;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 1120,
+        "wires": [
+            [
+                "83c1df536c7f5c58"
+            ]
+        ]
+    },
+    {
+        "id": "e362610c23b0b257",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "debug 71",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1660,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "83c1df536c7f5c58",
+        "type": "function",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "function 16",
+        "func": "var datas = msg.payload;\n\nvar messages = [];\nfor (var i = 0; i < datas.length; i++){\n  if (datas[i].col4 == \"ESP1\"){\n    messages.push(datas[i]);\n  }\n}\n  // Send the messages to the debugger/Table UI node\nmsg.payload = messages;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1450,
+        "y": 1120,
+        "wires": [
+            [
+                "e362610c23b0b257",
+                "dbf80eec0a31fb3b"
+            ]
+        ]
+    },
+    {
+        "id": "2677cb8e18501765",
+        "type": "file in",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "filename": "/home/iota/shared/trial.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 470,
+        "y": 1300,
+        "wires": [
+            [
+                "130af8a975fdf00f"
+            ]
+        ]
+    },
+    {
+        "id": "130af8a975fdf00f",
+        "type": "csv",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "sep": ",",
+        "hdrin": false,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 750,
+        "y": 1300,
+        "wires": [
+            [
+                "cba5de18c7b21828",
+                "1efac3b7b766dbc9"
+            ]
+        ]
+    },
+    {
+        "id": "404e23568cbb3fbd",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "debug 72",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "2f09103e2ec2ea80",
+        "type": "function",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "color",
+        "func": "var datas = msg.payload;\n\n// Create an array of messages to send to the Table UI node\nvar messages = [];\nfor (var i = 0; i < datas.length; i++) {\n  var data_name = datas[i]['col1'];\n  var message = {};\n  if (data_name === 'YY FIG ECN 01 . 3/4 .1') {\n    message = {\n      \"col1\": \"<b style='color:red'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:red'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:red'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:red'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:red'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:red'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  } else if (data_name === 'YY FIG YRA 00 . 1/5 . 1') {\n    message = {\n      \"col1\": \"<b style='color:green'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:green'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:green'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:green'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:green'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:green'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  } else {\n    message = {\n      \"col1\": \"<b style='color:blue'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:blue'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:blue'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:blue'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:blue'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:blue'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  }\n  messages.push(message);\n}\n\n// Send the messages to the Table UI node\nmsg.payload = messages;\nnode.send(msg);\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1610,
+        "y": 1320,
+        "wires": [
+            [
+                "81551d7bf1efe138"
+            ]
+        ]
+    },
+    {
+        "id": "ba7c8e9e7998fe96",
+        "type": "file in",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "filename": "/home/iota/shared/tool_list.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 530,
+        "y": 1360,
+        "wires": [
+            [
+                "22f40121e65d61df"
+            ]
+        ]
+    },
+    {
+        "id": "22f40121e65d61df",
+        "type": "csv",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "sep": ";",
+        "hdrin": false,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 770,
+        "y": 1360,
+        "wires": [
+            [
+                "404e23568cbb3fbd",
+                "4c8e1a4dd34a4f5c"
+            ]
+        ]
+    },
+    {
+        "id": "4c8e1a4dd34a4f5c",
+        "type": "join",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1050,
+        "y": 1340,
+        "wires": [
+            [
+                "9df8b16aee65d29b",
+                "d43d30837539329c"
+            ]
+        ]
+    },
+    {
+        "id": "cba5de18c7b21828",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "debug 73",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "9df8b16aee65d29b",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "debug 74",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1160,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "d43d30837539329c",
+        "type": "function",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "sorting_by_click",
+        "func": "var datas = msg.payload;\n\n  // Create an array of messages to send to the Table UI node\nvar messages = [];\n\nfor (var key in datas[0]) {\n  for (var jj = 0; jj < datas[1].length; jj++) {\n    if (datas[1][jj][\"col1\"] == datas[0][key]) {\n      messages.push(datas[1][jj]);\n      break;\n    }\n  }\n}\n\n  // Send the messages to the debugger/Table UI node\nmsg.payload = messages;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 1320,
+        "wires": [
+            [
+                "ce31fc57bd2ad8e1",
+                "18fae94a8e922b25"
+            ]
+        ]
+    },
+    {
+        "id": "166b31664079ef64",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "debug 75",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1640,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "ce31fc57bd2ad8e1",
+        "type": "function",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "function 17",
+        "func": "var datas = msg.payload;\n\nvar messages = [];\nfor (var i = 0; i < datas.length; i++){\n  if (datas[i].col4 == \"ESP2\"){\n    messages.push(datas[i]);\n  }\n}\n  // Send the messages to the debugger/Table UI node\nmsg.payload = messages;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1430,
+        "y": 1320,
+        "wires": [
+            [
+                "166b31664079ef64",
+                "2f09103e2ec2ea80"
+            ]
+        ]
+    },
+    {
+        "id": "3b8ce02b560da973",
+        "type": "file in",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "filename": "/home/iota/shared/trial.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 530,
+        "y": 1480,
+        "wires": [
+            [
+                "4baa6eb8441a6aef"
+            ]
+        ]
+    },
+    {
+        "id": "4baa6eb8441a6aef",
+        "type": "csv",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "sep": ",",
+        "hdrin": false,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 810,
+        "y": 1480,
+        "wires": [
+            [
+                "20143ab59bf0dac5",
+                "c4c274a9bd227219"
+            ]
+        ]
+    },
+    {
+        "id": "f1aafe4895d4ebe5",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "debug 76",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "41b5e3da5c7257d1",
+        "type": "function",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "color",
+        "func": "var datas = msg.payload;\n\n// Create an array of messages to send to the Table UI node\nvar messages = [];\nfor (var i = 0; i < datas.length; i++) {\n  var data_name = datas[i]['col1'];\n  var message = {};\n  if (data_name === 'YY FIG ECN 01 . 3/4 .1') {\n    message = {\n      \"col1\": \"<b style='color:red'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:red'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:red'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:red'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:red'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:red'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  } else if (data_name === 'YY FIG YRA 00 . 1/5 . 1') {\n    message = {\n      \"col1\": \"<b style='color:green'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:green'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:green'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:green'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:green'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:green'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  } else {\n    message = {\n      \"col1\": \"<b style='color:blue'>\" + datas[i]['col1'] + \"</b>\",\n      \"col2\": \"<b style='color:blue'>\" + datas[i]['col2'] + \"</b>\",\n      \"col3\": \"<b style='color:blue'>\" + datas[i]['col3'] + \"</b>\",\n      \"col4\": \"<b style='color:blue'>\" + datas[i]['col4'] + \"</b>\",\n      \"col5\": \"<b style='color:blue'>\" + datas[i]['col5'] + \"</b>\",\n      \"col6\": \"<b style='color:blue'>\" + datas[i]['col6'] + \"</b>\"\n    };\n  }\n  messages.push(message);\n}\n\n// Send the messages to the Table UI node\nmsg.payload = messages;\nnode.send(msg);\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1670,
+        "y": 1500,
+        "wires": [
+            [
+                "81551d7bf1efe138"
+            ]
+        ]
+    },
+    {
+        "id": "21f44c8e6ee0d55d",
+        "type": "file in",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "filename": "/home/iota/shared/tool_list.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 590,
+        "y": 1540,
+        "wires": [
+            [
+                "ac2acdad3b0d5057"
+            ]
+        ]
+    },
+    {
+        "id": "ac2acdad3b0d5057",
+        "type": "csv",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "sep": ";",
+        "hdrin": false,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 830,
+        "y": 1540,
+        "wires": [
+            [
+                "f1aafe4895d4ebe5",
+                "a01083d0c5110613"
+            ]
+        ]
+    },
+    {
+        "id": "a01083d0c5110613",
+        "type": "join",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1090,
+        "y": 1500,
+        "wires": [
+            [
+                "14887217e6dd783b",
+                "477c2f64433e3560"
+            ]
+        ]
+    },
+    {
+        "id": "20143ab59bf0dac5",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "debug 77",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "14887217e6dd783b",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "debug 78",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1260,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "477c2f64433e3560",
+        "type": "function",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "sorting_by_click",
+        "func": "var datas = msg.payload;\n\n  // Create an array of messages to send to the Table UI node\nvar messages = [];\n\nfor (var key in datas[0]) {\n  for (var jj = 0; jj < datas[1].length; jj++) {\n    if (datas[1][jj][\"col1\"] == datas[0][key]) {\n      messages.push(datas[1][jj]);\n      break;\n    }\n  }\n}\n\n  // Send the messages to the debugger/Table UI node\nmsg.payload = messages;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1300,
+        "y": 1500,
+        "wires": [
+            [
+                "ea59e92642708a50"
+            ]
+        ]
+    },
+    {
+        "id": "b54ae622f887d290",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "debug 79",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1700,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "ea59e92642708a50",
+        "type": "function",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "function 18",
+        "func": "var datas = msg.payload;\n\nvar messages = [];\nfor (var i = 0; i < datas.length; i++){\n  if (datas[i].col4 == \"ESP3\"){\n    messages.push(datas[i]);\n  }\n}\n  // Send the messages to the debugger/Table UI node\nmsg.payload = messages;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1490,
+        "y": 1500,
+        "wires": [
+            [
+                "b54ae622f887d290",
+                "41b5e3da5c7257d1"
+            ]
+        ]
+    },
+    {
+        "id": "18fae94a8e922b25",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "debug 80",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1400,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "291fe7e48aa279ca",
+        "type": "sort",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "order": "ascending",
+        "as_num": false,
+        "target": "payload",
+        "targetType": "msg",
+        "msgKey": "payload",
+        "msgKeyType": "elem",
+        "seqKey": "payload",
+        "seqKeyType": "msg",
+        "x": 890,
+        "y": 1120,
+        "wires": [
+            [
+                "d5d3766eaaf0811a"
+            ]
+        ]
+    },
+    {
+        "id": "1efac3b7b766dbc9",
+        "type": "sort",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "order": "ascending",
+        "as_num": false,
+        "target": "payload",
+        "targetType": "msg",
+        "msgKey": "payload",
+        "msgKeyType": "elem",
+        "seqKey": "payload",
+        "seqKeyType": "msg",
+        "x": 870,
+        "y": 1320,
+        "wires": [
+            [
+                "4c8e1a4dd34a4f5c"
+            ]
+        ]
+    },
+    {
+        "id": "c4c274a9bd227219",
+        "type": "sort",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "",
+        "order": "ascending",
+        "as_num": false,
+        "target": "payload",
+        "targetType": "msg",
+        "msgKey": "payload",
+        "msgKeyType": "elem",
+        "seqKey": "payload",
+        "seqKeyType": "msg",
+        "x": 950,
+        "y": 1480,
+        "wires": [
+            [
+                "a01083d0c5110613",
+                "ee3d6a58211bbaa5"
+            ]
+        ]
+    },
+    {
+        "id": "ee3d6a58211bbaa5",
+        "type": "debug",
+        "z": "4f082213ea077df6",
+        "g": "81dd4a63d29ced21",
+        "name": "debug 81",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "3c895ec0472e1673",
+        "type": "ui_text",
+        "z": "4f082213ea077df6",
+        "group": "2bcb426a1a0c221a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Tool Tracking",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "title",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 270,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "09bff036eae5db9f",
+        "type": "ui_template",
+        "z": "4f082213ea077df6",
+        "group": "2bcb426a1a0c221a",
+        "name": "CSS",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n    .title{\n       font-size: 1.8em;\n       color:black !important;\n       border-left: 6px solid orange; \n    }\n    .maintenance button:hover{\n    /*width: 50;*/\n    background-color:#4CAF50;\n    color:black !important;\n    }\n    .maintenance button{\n    border: none;\n    border-radius: 20px;\n    /*clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);*/\n    text-align: center;\n    width: 50;\n    transition-duration: 0.4s;\n    background-color: red !important;\n    color:black;\n    }\n    .machine button:hover{\n    /*width: 50;*/\n    background-color:#4CAF50;\n    color:black !important;\n    }\n    .machine button{\n    border: none;\n    border-radius: 20px;\n    /*clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);*/\n    text-align: center;\n    width: 50;\n    transition-duration: 0.4s;\n    background-color: green !important;\n    color:black;\n    }\n    .toolrack button:hover{\n    /*width: 50;*/\n    background-color:#4CAF50;\n    color:black !important;\n    }\n    .toolrack button{\n    border: none;\n    border-radius: 20px;\n    /*clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);*/\n    text-align: center;\n    width: 50;\n    transition-duration: 0.4s;\n    background-color: #FFFF99 !important;\n    color:black;\n    }\n    .realtime button:hover{\n    /*width: 50;*/\n    background-color:#4CAF50;\n    color:black !important;\n    }\n    .realtime button{\n    border: none;\n    /*border-radius: 8px;*/\n    /*clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);*/\n    text-align: center;\n    width: 50;\n    transition-duration: 0.4s;\n    /*background-color: #FFFF99 !important;*/\n    color:black;\n    }\n    .history button:hover{\n    /*width: 50;*/\n    background-color:#4CAF50;\n    color:black !important;\n    }\n    .history button{\n    border: none;\n    /*border-radius: 20px;*/\n    /*clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);*/\n    text-align: center;\n    width: 50;\n    transition-duration: 0.4s;\n    /*background-color: #FFFF99 !important;*/\n    color:black;\n    }\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 630,
+        "y": 1720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cbaf6a46012f21ef",
+        "type": "ui_spacer",
+        "z": "4f082213ea077df6",
+        "name": "spacer",
+        "group": "9025e9b8f3af6890",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4d6e73814e9d53d3",
+        "type": "ui_spacer",
+        "z": "4f082213ea077df6",
+        "name": "spacer",
+        "group": "",
+        "order": 2,
+        "width": 22,
+        "height": 1
+    },
+    {
+        "id": "e96d96b18d670b09",
+        "type": "ui_spacer",
+        "z": "4f082213ea077df6",
+        "name": "spacer",
+        "group": "",
+        "order": 8,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "9f22e1ab2b86f9b3",
+        "type": "ui_spacer",
+        "z": "4f082213ea077df6",
+        "name": "spacer",
+        "group": "68ab243347a61892",
+        "order": 1,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "4d8b4ad14dd24b98",
+        "type": "ui_spacer",
+        "z": "4f082213ea077df6",
+        "name": "spacer",
+        "group": "68ab243347a61892",
+        "order": 3,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "3893c567b0631da8",
+        "type": "ui_spacer",
+        "z": "4f082213ea077df6",
+        "name": "spacer",
+        "group": "68ab243347a61892",
+        "order": 5,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "e1825ce9bc1c0008",
+        "type": "mqtt-broker",
+        "name": "RPi broker",
+        "broker": "10.3.141.1",
+        "port": "1883",
+        "clientid": "Node_red_h",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "16a5a776562df867",
+        "type": "ui_group",
+        "name": "History",
+        "tab": "e24139a940a737f3",
+        "order": 5,
+        "disp": true,
+        "width": 20,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "77d63e1276a26d3e",
+        "type": "ui_group",
+        "name": "RealTime",
+        "tab": "e24139a940a737f3",
+        "order": 4,
+        "disp": true,
+        "width": 17,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7d3e77a46097edfa",
+        "type": "ui_group",
+        "name": "Control",
+        "tab": "e24139a940a737f3",
+        "order": 2,
+        "disp": false,
+        "width": 4,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "68ab243347a61892",
+        "type": "ui_group",
+        "name": "ControlSpecific",
+        "tab": "e24139a940a737f3",
+        "order": 3,
+        "disp": false,
+        "width": 16,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "814b10eb60723c9a",
+        "type": "ui_group",
+        "name": "MMT",
+        "tab": "e24139a940a737f3",
+        "order": 6,
+        "disp": false,
+        "width": "20",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2bcb426a1a0c221a",
+        "type": "ui_group",
+        "name": "Heading",
+        "tab": "e24139a940a737f3",
+        "order": 1,
+        "disp": false,
+        "width": 20,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e24139a940a737f3",
+        "type": "ui_tab",
+        "name": "AtomOneTechnologies",
+        "icon": "dashboard",
+        "order": 6,
+        "disabled": false,
+        "hidden": false
+    }
+]

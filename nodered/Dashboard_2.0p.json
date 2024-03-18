@@ -1,0 +1,779 @@
+[
+    {
+        "id": "f49b89499ad48a86",
+        "type": "tab",
+        "label": "Dashboard 2.0p",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "73d85772741969c3",
+        "type": "group",
+        "z": "f49b89499ad48a86",
+        "name": "Set flow variables",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "76944487be9cfcfa",
+            "8e2d804c62791adf",
+            "243e0099109838a0",
+            "210402a783a07ef8",
+            "7e95054c9aa219c2",
+            "edce80d1f8e93ba9",
+            "5045f3b0e4945d28",
+            "f8a061d6408bac3f",
+            "7d1c28a7b85890f0",
+            "9438179a4aabf0c6"
+        ],
+        "x": 374,
+        "y": 179,
+        "w": 972,
+        "h": 262
+    },
+    {
+        "id": "610d7e64f6ec5cd9",
+        "type": "group",
+        "z": "f49b89499ad48a86",
+        "name": "Reset flow varaibles",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "4acd0417b788ddcc",
+            "7833b7daf89688c9",
+            "f8a56ed295022d89"
+        ],
+        "x": 334,
+        "y": 59,
+        "w": 762,
+        "h": 82
+    },
+    {
+        "id": "61f43753caddc49c",
+        "type": "group",
+        "z": "f49b89499ad48a86",
+        "name": "Testing of flow variables",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "dd2c81018671889e",
+            "bc15066f8240ad99",
+            "8875853ca374631c",
+            "2b51e6d570c96e8a",
+            "7a1d7ec2ef6d26bd"
+        ],
+        "x": 144,
+        "y": 819,
+        "w": 762,
+        "h": 162
+    },
+    {
+        "id": "76944487be9cfcfa",
+        "type": "ui_dropdown",
+        "z": "f49b89499ad48a86",
+        "g": "73d85772741969c3",
+        "name": "",
+        "label": "Tool ID",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "5d7ec4df0c9dfa85",
+        "order": 3,
+        "width": 5,
+        "height": 1,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "YY FIG ECN 01 . 3/4 .1",
+                "value": "YY FIG ECN 01 . 3/4 .1",
+                "type": "str"
+            },
+            {
+                "label": "YY FIG YRA 00 . 1/5 . 1",
+                "value": "YY FIG YRA 00 . 1/5 . 1",
+                "type": "str"
+            },
+            {
+                "label": "YY FIG YRA1 03 . 3/4 . 1",
+                "value": "YY FIG YRA1 03 . 3/4 . 1",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 640,
+        "y": 260,
+        "wires": [
+            [
+                "7d1c28a7b85890f0",
+                "8e2d804c62791adf"
+            ]
+        ]
+    },
+    {
+        "id": "8e2d804c62791adf",
+        "type": "change",
+        "z": "f49b89499ad48a86",
+        "g": "73d85772741969c3",
+        "name": "set ToolID",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ToolID",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 980,
+        "y": 260,
+        "wires": [
+            [
+                "243e0099109838a0"
+            ]
+        ]
+    },
+    {
+        "id": "243e0099109838a0",
+        "type": "debug",
+        "z": "f49b89499ad48a86",
+        "g": "73d85772741969c3",
+        "name": "set ToolID as Variable",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1200,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "210402a783a07ef8",
+        "type": "ui_form",
+        "z": "f49b89499ad48a86",
+        "g": "73d85772741969c3",
+        "name": "",
+        "label": "",
+        "group": "5d7ec4df0c9dfa85",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "options": [
+            {
+                "label": "Date",
+                "value": "date",
+                "type": "date",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "date": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": true,
+        "className": "",
+        "x": 450,
+        "y": 320,
+        "wires": [
+            [
+                "edce80d1f8e93ba9",
+                "5045f3b0e4945d28"
+            ]
+        ]
+    },
+    {
+        "id": "7e95054c9aa219c2",
+        "type": "debug",
+        "z": "f49b89499ad48a86",
+        "g": "73d85772741969c3",
+        "name": "debug 102",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.date",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "edce80d1f8e93ba9",
+        "type": "moment",
+        "z": "f49b89499ad48a86",
+        "g": "73d85772741969c3",
+        "name": "",
+        "topic": "",
+        "input": "payload.date",
+        "inputType": "msg",
+        "inTz": "Asia/Calcutta",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "D/M/YYYY",
+        "locale": "en-GB",
+        "output": "payload.date",
+        "outputType": "msg",
+        "outTz": "Asia/Calcutta",
+        "x": 840,
+        "y": 320,
+        "wires": [
+            [
+                "f8a061d6408bac3f"
+            ]
+        ]
+    },
+    {
+        "id": "5045f3b0e4945d28",
+        "type": "debug",
+        "z": "f49b89499ad48a86",
+        "g": "73d85772741969c3",
+        "name": "debug 103",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.date",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "f8a061d6408bac3f",
+        "type": "change",
+        "z": "f49b89499ad48a86",
+        "g": "73d85772741969c3",
+        "name": "set Date",
+        "rules": [
+            {
+                "t": "set",
+                "p": "searchDate",
+                "pt": "flow",
+                "to": "payload.date",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1040,
+        "y": 320,
+        "wires": [
+            [
+                "7e95054c9aa219c2",
+                "9438179a4aabf0c6"
+            ]
+        ]
+    },
+    {
+        "id": "4acd0417b788ddcc",
+        "type": "change",
+        "z": "f49b89499ad48a86",
+        "g": "610d7e64f6ec5cd9",
+        "name": "set ToolID",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "ToolID",
+                "pt": "flow"
+            },
+            {
+                "t": "delete",
+                "p": "searchDate",
+                "pt": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 100,
+        "wires": [
+            [
+                "f8a56ed295022d89"
+            ]
+        ]
+    },
+    {
+        "id": "7833b7daf89688c9",
+        "type": "ui_button",
+        "z": "f49b89499ad48a86",
+        "g": "610d7e64f6ec5cd9",
+        "name": "",
+        "group": "5d7ec4df0c9dfa85",
+        "order": 5,
+        "width": 5,
+        "height": 1,
+        "passthru": false,
+        "label": "clear",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 410,
+        "y": 100,
+        "wires": [
+            [
+                "4acd0417b788ddcc",
+                "76944487be9cfcfa"
+            ]
+        ]
+    },
+    {
+        "id": "f8a56ed295022d89",
+        "type": "debug",
+        "z": "f49b89499ad48a86",
+        "g": "610d7e64f6ec5cd9",
+        "name": "Delete confirmation",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "dd2c81018671889e",
+        "type": "function",
+        "z": "f49b89499ad48a86",
+        "g": "61f43753caddc49c",
+        "name": "function 26",
+        "func": "var ToolID = flow.get(\"ToolID\");\nvar searchDateN = flow.get(\"searchDateN\");\n\n\nreturn [{payload: ToolID}, {payload: searchDateN}];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 920,
+        "wires": [
+            [
+                "7a1d7ec2ef6d26bd"
+            ],
+            [
+                "2b51e6d570c96e8a"
+            ]
+        ]
+    },
+    {
+        "id": "bc15066f8240ad99",
+        "type": "inject",
+        "z": "f49b89499ad48a86",
+        "g": "61f43753caddc49c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 240,
+        "y": 920,
+        "wires": [
+            [
+                "dd2c81018671889e"
+            ]
+        ]
+    },
+    {
+        "id": "8875853ca374631c",
+        "type": "debug",
+        "z": "f49b89499ad48a86",
+        "g": "61f43753caddc49c",
+        "name": "debug 104",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "2b51e6d570c96e8a",
+        "type": "debug",
+        "z": "f49b89499ad48a86",
+        "g": "61f43753caddc49c",
+        "name": "debug 105",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "7d1c28a7b85890f0",
+        "type": "debug",
+        "z": "f49b89499ad48a86",
+        "g": "73d85772741969c3",
+        "name": "debug 106",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "8766e257aae0ae44",
+        "type": "file in",
+        "z": "f49b89499ad48a86",
+        "name": "",
+        "filename": "C:\\IoT\\trial.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 620,
+        "y": 660,
+        "wires": [
+            [
+                "cbfced4da0216217"
+            ]
+        ]
+    },
+    {
+        "id": "cbfced4da0216217",
+        "type": "csv",
+        "z": "f49b89499ad48a86",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 810,
+        "y": 660,
+        "wires": [
+            [
+                "96abe0b4b3523860",
+                "3681197eac4fab9e"
+            ]
+        ]
+    },
+    {
+        "id": "364d2210a884f211",
+        "type": "debug",
+        "z": "f49b89499ad48a86",
+        "name": "debug 107",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "3681197eac4fab9e",
+        "type": "function",
+        "z": "f49b89499ad48a86",
+        "name": "function 29",
+        "func": "// Get the flow variable from the dashboard\n\nvar ToolID = flow.get(\"ToolID\");\nvar searchDate = flow.get(\"searchDate\");\n\nif (typeof ToolID === 'undefined') {\n    var ToolIDN = '';\n}\nelse{\n    ToolIDN = ToolID;\n}\n\nflow.set(\"ToolIDN\",ToolIDN)\n\n// var newMsg = {};\n\n// var l = { x: msg.payload.xls.length };\n\nvar l = {x: msg.payload.length}\nvar array = [];\n// var rfid = msg.payload.RFID.slice(5, 15);\n\n// var esp = msg.payload.RFID.slice(16, 21);\n\nif (ToolIDN != \"\" && searchDate != \"\" ){\n    for (var i = 0; i < l.x; i++) {\n        if (msg.payload[i][\"col1\"] == ToolIDN && msg.payload[i][\"col5\"] == searchDate) {\n            array.push(msg.payload[i])\n        }\n    }\n}\nelse if (ToolIDN == \"\" && searchDate != \"\" ){\n    for (var i = 0; i < l.x; i++) {\n        if (msg.payload[i][\"col5\"] == searchDate) {\n            array.push(msg.payload[i])\n        }\n    }\n}\nelse if (ToolIDN != \"\" && searchDate == \"\" ){\n    for (var i = 0; i < l.x; i++) {\n        if (msg.payload[i][\"col1\"] == ToolIDN ) {\n            array.push(msg.payload[i])\n        }\n    }\n}\n    \n//     else{\n//         var newMsg = { pass: 0}\n//     }\n// }\n// for (var i = 0; i < l.x; i++) {\n//     if (msg.payload.xls[i] && msg.payload.xls[i][0] == rfid.toString()) {\n//         newMsg.payload = {\n//             tool_id: msg.payload.xls[i][1],\n//             Part: msg.payload.xls[i][2],\n//             Operation: msg.payload.xls[i][3],\n//             Station_id: esp,\n//             Date:d.getDate()+\"/\"+(d.getMonth()+1)+ \"/\"+ d.getFullYear(),\n//             Time: d.getHours()+\":\"+d.getMinutes()\n//             //srvtime:new Date(Date.now()+(5*60*60*1000))\n//            // srvtime:new Date(new Date().getTime()+5*3600*1000)\n\n//         };\n//         break; // Once found, exit the loop\n//     }\n// }\n// var newMsg = [{payload: ToolID},{paylaod:searchDateN},{payload: array}];\n// return newMsg;\nreturn [{ payload: ToolIDN }, { payload: searchDate }, { payload: array }]",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 660,
+        "wires": [
+            [
+                "364d2210a884f211"
+            ],
+            [
+                "d36c6cf3a275b506"
+            ],
+            [
+                "a5c91f0098fae2b5",
+                "0b5649d9636bc896"
+            ]
+        ]
+    },
+    {
+        "id": "0b5649d9636bc896",
+        "type": "ui_table",
+        "z": "f49b89499ad48a86",
+        "group": "5d7ec4df0c9dfa85",
+        "name": "",
+        "order": 6,
+        "width": 12,
+        "height": 7,
+        "columns": [
+            {
+                "field": "col5",
+                "title": "Date",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col6",
+                "title": "Time",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col1",
+                "title": "Tool ID",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col2",
+                "title": "Part Name",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col3",
+                "title": "Operation",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "col4",
+                "title": "Station ID",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1190,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "96abe0b4b3523860",
+        "type": "debug",
+        "z": "f49b89499ad48a86",
+        "name": "debug 108",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 990,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "9438179a4aabf0c6",
+        "type": "link out",
+        "z": "f49b89499ad48a86",
+        "g": "73d85772741969c3",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "e0a9f5172cdc5b93"
+        ],
+        "x": 1165,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "e0a9f5172cdc5b93",
+        "type": "link in",
+        "z": "f49b89499ad48a86",
+        "name": "link in 1",
+        "links": [
+            "9438179a4aabf0c6"
+        ],
+        "x": 425,
+        "y": 660,
+        "wires": [
+            [
+                "8766e257aae0ae44"
+            ]
+        ]
+    },
+    {
+        "id": "d36c6cf3a275b506",
+        "type": "debug",
+        "z": "f49b89499ad48a86",
+        "name": "debug 109",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "a5c91f0098fae2b5",
+        "type": "debug",
+        "z": "f49b89499ad48a86",
+        "name": "debug 110",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "7a1d7ec2ef6d26bd",
+        "type": "function",
+        "z": "f49b89499ad48a86",
+        "g": "61f43753caddc49c",
+        "name": "function 31",
+        "func": "\nif (typeof msg.payload === 'undefined') {\n    msg.payload = '';\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 880,
+        "wires": [
+            [
+                "8875853ca374631c"
+            ]
+        ]
+    },
+    {
+        "id": "055ddfaad478b31a",
+        "type": "ui_spacer",
+        "z": "f49b89499ad48a86",
+        "name": "spacer",
+        "group": "5d7ec4df0c9dfa85",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "be2d323ee572aca7",
+        "type": "ui_spacer",
+        "z": "f49b89499ad48a86",
+        "name": "spacer",
+        "group": "5d7ec4df0c9dfa85",
+        "order": 4,
+        "width": 7,
+        "height": 1
+    },
+    {
+        "id": "5d7ec4df0c9dfa85",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "9146d551a6ba8695",
+        "order": 1,
+        "disp": false,
+        "width": 12,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9146d551a6ba8695",
+        "type": "ui_tab",
+        "name": "Tab",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]

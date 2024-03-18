@@ -1,0 +1,534 @@
+[
+    {
+        "id": "c8eab644be710573",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7f7053f0b13ea386",
+        "type": "ui_dropdown",
+        "z": "c8eab644be710573",
+        "name": "",
+        "label": "Tool ID",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "64fd40ee632e57b3",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "YY FIG ECN 01 . 3/4 .1",
+                "value": "YY FIG ECN 01 . 3/4 .1",
+                "type": "str"
+            },
+            {
+                "label": "YY FIG YRA 00 . 1/5 . 1",
+                "value": "YY FIG YRA 00 . 1/5 . 1",
+                "type": "str"
+            },
+            {
+                "label": "YY FIG YRA1 03 . 3/4 . 1",
+                "value": "YY FIG YRA1 03 . 3/4 . 1",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 470,
+        "y": 140,
+        "wires": [
+            [
+                "de264a65fdc11970"
+            ]
+        ]
+    },
+    {
+        "id": "de264a65fdc11970",
+        "type": "change",
+        "z": "c8eab644be710573",
+        "name": "set ToolID",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ToolID",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 140,
+        "wires": [
+            [
+                "bf8d16612b38876a"
+            ]
+        ]
+    },
+    {
+        "id": "bf8d16612b38876a",
+        "type": "debug",
+        "z": "c8eab644be710573",
+        "name": "set ToolID as Variable",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "2380543748a43f92",
+        "type": "ui_date_picker",
+        "z": "c8eab644be710573",
+        "name": "",
+        "label": "date",
+        "group": "64fd40ee632e57b3",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 460,
+        "y": 260,
+        "wires": [
+            [
+                "89a58fbc0b309e48"
+            ]
+        ]
+    },
+    {
+        "id": "89a58fbc0b309e48",
+        "type": "function",
+        "z": "c8eab644be710573",
+        "name": "function 22",
+        "func": "// Create a new Date object from the msg.payload\nvar date = new Date(msg.payload);\n\n// Format the date as \"dd/mm/yyyy\"\nvar formattedDate = date.getDate() + \"/\" + (date.getMonth() + 1) + \"/\" + date.getFullYear();\n\n// Set the formatted date as the msg.payload\n// msg.payload = formattedDate;\nflow.set(\"searchDate\",formattedDate)\n// Return the modified msg object\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 260,
+        "wires": [
+            [
+                "729b992190bb695f"
+            ]
+        ]
+    },
+    {
+        "id": "729b992190bb695f",
+        "type": "debug",
+        "z": "c8eab644be710573",
+        "name": "Set searchDate as varaible",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "dc4debb63b6a5b2d",
+        "type": "function",
+        "z": "c8eab644be710573",
+        "name": "function 23",
+        "func": "var ToolID = flow.get(\"ToolID\");\nvar searchDate = flow.get(\"searchDate\")\nreturn [{payload : ToolID},{payload : searchDate}];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 420,
+        "wires": [
+            [
+                "49652225f50294fd"
+            ],
+            [
+                "566c369e71f09e66"
+            ]
+        ]
+    },
+    {
+        "id": "49652225f50294fd",
+        "type": "debug",
+        "z": "c8eab644be710573",
+        "name": "debug 97",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "566c369e71f09e66",
+        "type": "debug",
+        "z": "c8eab644be710573",
+        "name": "debug 98",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "5df719172a770d3d",
+        "type": "ui_button",
+        "z": "c8eab644be710573",
+        "name": "",
+        "group": "64fd40ee632e57b3",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Search",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 320,
+        "y": 420,
+        "wires": [
+            [
+                "dc4debb63b6a5b2d"
+            ]
+        ]
+    },
+    {
+        "id": "ec834cdc1b3e551f",
+        "type": "change",
+        "z": "c8eab644be710573",
+        "name": "set ToolID",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "ToolID",
+                "pt": "flow"
+            },
+            {
+                "t": "delete",
+                "p": "searchDate",
+                "pt": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1510,
+        "y": 200,
+        "wires": [
+            [
+                "62adcec00bdc182a"
+            ]
+        ]
+    },
+    {
+        "id": "4c3fd681f89bc065",
+        "type": "ui_button",
+        "z": "c8eab644be710573",
+        "name": "",
+        "group": "64fd40ee632e57b3",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "clear",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1320,
+        "y": 200,
+        "wires": [
+            [
+                "ec834cdc1b3e551f"
+            ]
+        ]
+    },
+    {
+        "id": "62adcec00bdc182a",
+        "type": "debug",
+        "z": "c8eab644be710573",
+        "name": "Delete confirmation",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1770,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "36926c6697f8d9a3",
+        "type": "ui_button",
+        "z": "c8eab644be710573",
+        "name": "Enable",
+        "group": "64fd40ee632e57b3",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "",
+        "tooltip": "",
+        "color": "green",
+        "bgcolor": "white",
+        "className": "",
+        "icon": "visibility",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 120,
+        "y": 260,
+        "wires": [
+            [
+                "f9d33f7acb47909b"
+            ]
+        ]
+    },
+    {
+        "id": "a4a4d74d4651c07e",
+        "type": "ui_button",
+        "z": "c8eab644be710573",
+        "name": "Disable",
+        "group": "64fd40ee632e57b3",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "",
+        "tooltip": "",
+        "color": "red",
+        "bgcolor": "white",
+        "className": "",
+        "icon": "visibility_off",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 120,
+        "y": 320,
+        "wires": [
+            [
+                "f9d33f7acb47909b"
+            ]
+        ]
+    },
+    {
+        "id": "f9d33f7acb47909b",
+        "type": "change",
+        "z": "c8eab644be710573",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            },
+            {
+                "t": "set",
+                "p": "Disable",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 260,
+        "wires": [
+            [
+                "2380543748a43f92"
+            ]
+        ]
+    },
+    {
+        "id": "396160cbc973449f",
+        "type": "ui_button",
+        "z": "c8eab644be710573",
+        "name": "Enable",
+        "group": "64fd40ee632e57b3",
+        "order": 7,
+        "width": 16,
+        "height": 1,
+        "passthru": false,
+        "label": "",
+        "tooltip": "",
+        "color": "green",
+        "bgcolor": "white",
+        "className": "",
+        "icon": "visibility",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 120,
+        "y": 140,
+        "wires": [
+            [
+                "8ec3446e30cc56cf"
+            ]
+        ]
+    },
+    {
+        "id": "85a5a88033b113d5",
+        "type": "ui_button",
+        "z": "c8eab644be710573",
+        "name": "Disable",
+        "group": "64fd40ee632e57b3",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "",
+        "tooltip": "",
+        "color": "red",
+        "bgcolor": "white",
+        "className": "",
+        "icon": "visibility_off",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 120,
+        "y": 200,
+        "wires": [
+            [
+                "8ec3446e30cc56cf"
+            ]
+        ]
+    },
+    {
+        "id": "8ec3446e30cc56cf",
+        "type": "change",
+        "z": "c8eab644be710573",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "Disable",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 140,
+        "wires": [
+            [
+                "7f7053f0b13ea386"
+            ]
+        ]
+    },
+    {
+        "id": "1dc7453e25453167",
+        "type": "ui_table",
+        "z": "c8eab644be710573",
+        "group": "64fd40ee632e57b3",
+        "name": "",
+        "order": 9,
+        "width": 16,
+        "height": 1,
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 520,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "64fd40ee632e57b3",
+        "type": "ui_group",
+        "name": "G1",
+        "tab": "736b245be3376acd",
+        "order": 1,
+        "disp": true,
+        "width": 16,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "736b245be3376acd",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
